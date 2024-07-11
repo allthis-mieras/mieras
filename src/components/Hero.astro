@@ -1,0 +1,151 @@
+---
+import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
+
+import heroImage from "../assets/img/hero-hofplein.png"; // Image is 1600x900
+const { src = "/astronaut-hero-img.webp" } = Astro.props;
+---
+
+<section class="stretch hero container">
+  <div class="panels grid h-full md:grid-cols-2">
+    <div class="panel__visual">
+      <Image
+        src={heroImage}
+        widths={[240, 540, 720, heroImage.width]}
+        sizes={`(max-width: 360px) 720px, (max-width: 720px) 960px, (max-width: 1600px) 1280px, ${heroImage.width}px`}
+        alt="A description of my image."
+        class="h-full object-cover mix-blend-multiply"
+      />
+    </div>
+    <div class="panel__content flex flex-col justify-between bg-slate-50">
+      <div class="panel__meta">
+        <ul class="flex flex-row justify-between">
+          <li>Rotterdam</li>
+          <li>The Netherlands</li>
+          <li>1984</li>
+        </ul>
+      </div>
+      <div
+        class="panel__center flex flex-col content-center justify-center p-4 text-center"
+      >
+        <h2>Digital Designer</h2>
+        <h1>Maarten Mieras</h1>
+
+        <p class="flex justify-center gap-4 font-bold">
+          RTM
+          <span class="country font-normal">NL</span>
+          <Icon
+            pack="lucide"
+            class="inline-block"
+            name="smile"
+            width="1rem"
+          /><span class="year">05.01.84</span>
+        </p>
+      </div>
+      <div class="panel__meta">
+        <ul class="">
+          <li>Day</li>
+          <li>Time</li>
+          <li>Year</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 
+<section class="my-24 hero">
+  <div class="container">
+    <div class="grid items-center grid-cols-1 gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-8 md:items-start">
+        <h1 class="text-6xl text-center md:text-left lg:text-8xl">
+          <slot
+            ><span class="text-gradient">Accessible</span> Starter for Astro</slot
+          >
+        </h1>
+        <div class="flex flex-col gap-3 min-[500px]:flex-row">
+          <a
+            class="button has-icon"
+            href="https://github.com/markteekman/accessible-astro-starter"
+          >
+            <Icon pack="ion" name="star-outline" />
+            Star on GitHub
+          </a>
+          <a
+            class="button has-icon color-secondary"
+            href="https://github.com/markteekman/accessible-astro-starter/blob/main/README.md"
+          >
+            <Icon pack="ion" name="bookmark-outline" />
+            Read the Docs
+          </a>
+        </div>
+      </div>
+      <img class="hidden lg:block" src={src} alt="" decoding="async" />
+    </div>
+  </div>
+</section> -->
+
+<style lang="scss">
+  .hero {
+    height: calc(100vh - 8rem);
+    margin-bottom: var(--gap-default);
+  }
+
+  .panels {
+    gap: var(--gap-default);
+  }
+  .panels > div {
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .panel__visual {
+    background-color: var(--secondary-500);
+  }
+
+  .panel__content {
+    background-color: var(--primary-400);
+    color: var(--neutral-900);
+  }
+
+  .panel__meta {
+    padding: var(--space-xs);
+  }
+
+  .panel__meta ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+    gap: var(--gap-default);
+  }
+
+  .panel__meta ul li {
+    text-align: center;
+  }
+  .panel__meta ul li:first-child {
+    text-align: left;
+  }
+  .panel__meta ul li:last-child {
+    text-align: right;
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      315deg,
+      var(--primary-200) 25%,
+      var(--secondary-500)
+    );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  :global(.darkmode .text-gradient) {
+    background: linear-gradient(
+      315deg,
+      var(--primary-200) 25%,
+      var(--secondary-400)
+    );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

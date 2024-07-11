@@ -1,0 +1,21 @@
+---
+// TickerItem.astro
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<span class="item">{label}</span>
+
+<style>
+  span {
+    padding: 1rem 0.25rem;
+  }
+
+  span::after {
+    content: "→";
+    padding: 0 0.25rem;
+  }
+</style>

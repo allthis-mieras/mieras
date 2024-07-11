@@ -1,0 +1,89 @@
+---
+// Ticker.astro
+interface Props {
+  speed?: number;
+  direction?: "left" | "right";
+}
+
+// Stel standaardwaarden in
+const defaultSpeed = 40;
+const defaultDirection = "left";
+const { speed = defaultSpeed, direction = defaultDirection } = Astro.props;
+const translateDirection =
+  direction === "left" ? "translateX(-100%)" : "translateX(100%)";
+---
+
+<div class="stretch container">
+  <div class="ticker-wrap">
+    <div
+      class="ticker"
+      style={`--speed: ${speed}s; --translate-direction: ${translateDirection};`}
+    >
+      <span class="item-collection-1">
+        <slot />
+      </span>
+      <span class="item-collection-2">
+        <slot />
+      </span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .wrap {
+    padding: 0 var(--gap-default);
+  }
+
+  .ticker-wrap {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #fff960;
+    color: #000;
+    display: flex;
+    padding: 0.2rem var(--gap-default);
+  }
+  .ticker {
+    display: inline-block;
+    animation: marquee var(--speed) linear infinite;
+  }
+  .item-collection {
+    display: inline-block;
+  }
+
+  .item-collection-1 {
+    position: relative;
+    left: 0%;
+    animation: swap var(--speed) linear infinite;
+  }
+
+  .item {
+    display: inline-block;
+    padding: 0 1rem;
+    font-size: 2rem;
+    color: black;
+    font-weight: 800;
+    font-family: sans-serif;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: var(--translate-direction);
+    }
+  }
+
+  @keyframes swap {
+    0%,
+    50% {
+      left: 0%;
+    }
+    50.01%,
+    100% {
+      left: 100%;
+    }
+  }
+</style>
