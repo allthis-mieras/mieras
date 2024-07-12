@@ -13,7 +13,7 @@ const translateDirection =
   direction === "left" ? "translateX(-100%)" : "translateX(100%)";
 ---
 
-<div class="stretch container">
+<div data-scroll-section class="stretch container">
   <div class="ticker-wrap">
     <div
       class="ticker"
@@ -43,6 +43,7 @@ const translateDirection =
     color: #000;
     display: flex;
     padding: 0.2rem var(--gap-default);
+    border-radius: var(--radius-default);
   }
   .ticker {
     display: inline-block;
