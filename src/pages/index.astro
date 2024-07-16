@@ -6,7 +6,7 @@ import Intro from "../components/Intro.astro";
 
 import Ticker from "../components/Ticker.astro";
 import TickerItem from "../components/TickerItem.astro";
-import LmTicker from "../components/LmTicker.astro";
+import Work from "../components/Work.astro";
 ---
 
 <DefaultLayout title="Home">
@@ -27,41 +27,43 @@ import LmTicker from "../components/LmTicker.astro";
       <TickerItem label="Pitching & Presenting" />
       <TickerItem label="Front-End Development" />
     </Ticker>
+    <Work />
+    <div>
+      <script>
+        // LOCOMOTIVE
+        // import LocomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll";
+
+        // const scroller = new LocomotiveScroll({
+        //   el: document.querySelector("[data-scroll-container]"),
+        //   smooth: true,
+        // });
+
+        // LENIS
+        import Lenis from "lenis";
+
+        const lenis = new Lenis();
+
+        lenis.on("scroll", (e) => {
+          console.log(e);
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // MOTION.DEV
+        // import { animate, scroll } from "motion";
+
+        // document.querySelectorAll("section > div").forEach((item) => {
+        //   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
+        //     target: item,
+        //     offset: ["start end", "end end", "start start", "end start"],
+        //   });
+        // });
+      </script>
+    </div>
   </div>
-
-  <script>
-    // LOCOMOTIVE
-    // import LocomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll";
-
-    // const scroller = new LocomotiveScroll({
-    //   el: document.querySelector("[data-scroll-container]"),
-    //   smooth: true,
-    // });
-
-    // LENIS
-    import Lenis from "lenis";
-
-    const lenis = new Lenis();
-
-    lenis.on("scroll", (e) => {
-      console.log(e);
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    // MOTION.DEV
-    // import { animate, scroll } from "motion";
-
-    // document.querySelectorAll("section > div").forEach((item) => {
-    //   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
-    //     target: item,
-    //     offset: ["start end", "end end", "start start", "end start"],
-    //   });
-    // });
-  </script>
 </DefaultLayout>

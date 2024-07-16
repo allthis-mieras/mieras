@@ -41,35 +41,34 @@ import { Icon } from "astro-icon";
   }
 
   #randomizer {
-    padding: 10px;
+    padding: 0.675rem;
     cursor: pointer;
     z-index: 999;
-    background: linear-gradient(
-      to bottom,
-      var(--first-color),
-      var(--last-color)
-    );
     border-radius: 100vw;
-  }
-
-  .dark-mode #randomizer {
     background: linear-gradient(
-      to top,
+      -30deg,
       var(--first-color-dark),
       var(--last-color-dark)
     );
-    border-radius: 100vw;
+
+    background-size: 200% 200%;
+    animation: gradient 1s ease infinite;
   }
+
   #randomizer [astro-icon] {
-    width: 1rem;
-    color: var(--action-color);
+    width: 1.5rem;
+    color: var(--first-color);
   }
 
-  .accent-element {
-    color: var(--accent-color);
+  .darkmode #randomizer {
+    background: linear-gradient(-30deg, var(--first-color), var(--last-color));
+    background-size: 200% 200%;
+    animation: gradient 1s ease infinite;
   }
 
-  animation: gradient 15s ease infinite;
+  .darkmode #randomizer [astro-icon] {
+    color: var(--first-color-dark);
+  }
 </style>
 <script>
   const random = (min, max) => Math.random() * (max - min) + min;
