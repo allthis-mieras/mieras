@@ -15,11 +15,9 @@ import { Icon } from "astro-icon";
   }
 
   body {
-    background: linear-gradient(
-      to bottom,
-      var(--first-color),
-      var(--last-color)
-    );
+    background: linear-gradient(-45deg, var(--first-color), var(--last-color));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   }
 
   body.darkmode {
@@ -30,9 +28,20 @@ import { Icon } from "astro-icon";
     );
   }
 
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   #randomizer {
     padding: 10px;
-
     cursor: pointer;
     z-index: 999;
     background: linear-gradient(
@@ -59,6 +68,8 @@ import { Icon } from "astro-icon";
   .accent-element {
     color: var(--accent-color);
   }
+
+  animation: gradient 15s ease infinite;
 </style>
 <script>
   const random = (min, max) => Math.random() * (max - min) + min;

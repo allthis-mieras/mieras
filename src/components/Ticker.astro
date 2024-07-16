@@ -13,7 +13,7 @@ const translateDirection =
   direction === "left" ? "translateX(-100%)" : "translateX(100%)";
 ---
 
-<div data-scroll-section class="stretch container">
+<section data-scroll-section class="stretch containe my-64">
   <div class="ticker-wrap">
     <div
       class="ticker"
@@ -27,19 +27,15 @@ const translateDirection =
       </span>
     </div>
   </div>
-</div>
+</section>
 
 <style>
-  .wrap {
-    padding: 0 var(--gap-default);
-  }
-
   .ticker-wrap {
     width: 100%;
-    margin: 0 auto;
+
     overflow: hidden;
     white-space: nowrap;
-    background-color: #fff960;
+    /* background-color: #fff960; */
     color: #000;
     display: flex;
     padding: 0.2rem var(--gap-default);
@@ -62,7 +58,7 @@ const translateDirection =
   .item {
     display: inline-block;
     padding: 0 1rem;
-    font-size: 2rem;
+
     color: black;
     font-weight: 800;
     font-family: sans-serif;

@@ -7,7 +7,7 @@ const { src = "/astronaut-hero-img.webp" } = Astro.props;
 ---
 
 <section class="stretch container" data-scroll-section>
-  <div class="container">
+  <div class="content">
     <h1>Maarten Mieras</h1>
     <h2>digital designer based in rotterdam</h2>
   </div>
@@ -45,6 +45,10 @@ const { src = "/astronaut-hero-img.webp" } = Astro.props;
 </section> -->
 
 <style lang="scss">
+  .content {
+    padding: 3vh 0 6vh 0;
+  }
+
   h1,
   h2 {
     text-align: center;
