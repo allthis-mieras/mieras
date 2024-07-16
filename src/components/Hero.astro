@@ -7,12 +7,21 @@ const { src = "/astronaut-hero-img.webp" } = Astro.props;
 ---
 
 <section class="stretch container" data-scroll-section>
-  <div class="content flex flex-col justify-center">
-    <h1>Maarten Mieras</h1>
-    <h2>digital designer based in rotterdam</h2>
+  <div data-scroll class="content">
+    <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
+      Maarten Mieras
+    </h1>
+
+    <h2 data-scroll>
+      <span data-scroll data-scroll-speed="1" data-scroll-position="top"
+        >digital designer</span
+      >
+      <span data-scroll data-scroll-speed="2" data-scroll-position="top"
+        >based in rotterdam</span
+      >
+    </h2>
   </div>
-</section>
-<!-- 
+  <!-- 
 <section class="my-24 hero">
   <div class="container">
     <div class="grid items-center grid-cols-1 gap-24 lg:grid-cols-2">
@@ -44,19 +53,20 @@ const { src = "/astronaut-hero-img.webp" } = Astro.props;
   </div>
 </section> -->
 
-<style lang="scss">
-  .content {
-    padding: 3vh 0 6vh 0;
-  }
+  <style lang="scss">
+    .content {
+      padding: 3vh 0 6vh 0;
+    }
 
-  h1,
-  h2 {
-    text-align: center;
-    text-transform: uppercase;
-    line-height: 1;
-    margin: 0 auto;
-  }
-  h2 {
-    font-size: var(--step-5);
-  }
-</style>
+    h1,
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: var(--step-5);
+    }
+  </style>
+</section>

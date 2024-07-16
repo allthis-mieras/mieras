@@ -13,8 +13,8 @@ const translateDirection =
   direction === "left" ? "translateX(-100%)" : "translateX(100%)";
 ---
 
-<section data-scroll-section class="stretch containe my-64">
-  <div class="ticker-wrap">
+<section class="stretch containe my-32">
+  <div class="ticker-wrap flex gap-2">
     <div
       class="ticker"
       style={`--speed: ${speed}s; --translate-direction: ${translateDirection};`}
@@ -33,7 +33,7 @@ const translateDirection =
   .ticker-wrap {
     width: 100%;
 
-    overflow: hidden;
+    /* overflow: hidden; */
     white-space: nowrap;
     /* background-color: #fff960; */
     color: #000;
@@ -46,7 +46,8 @@ const translateDirection =
     animation: marquee var(--speed) linear infinite;
   }
   .item-collection {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
   }
 
   .item-collection-1 {
@@ -55,13 +56,14 @@ const translateDirection =
     animation: swap var(--speed) linear infinite;
   }
 
-  .item {
+  :global(.item) {
     display: inline-block;
     padding: 0 1rem;
 
     color: black;
     font-weight: 800;
     font-family: sans-serif;
+    border-radius: 100vw;
   }
 
   @keyframes marquee {

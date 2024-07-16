@@ -27,41 +27,41 @@ import LmTicker from "../components/LmTicker.astro";
       <TickerItem label="Pitching & Presenting" />
       <TickerItem label="Front-End Development" />
     </Ticker>
-    <LmTicker />
-    <div data-scroll-section>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque
-        corporis dicta exercitationem accusantium aut perferendis voluptate
-        porro dignissimos aperiam perspiciatis repellendus, soluta, vero commodi
-        reiciendis nam veniam ullam iusto ratione!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque
-        corporis dicta exercitationem accusantium aut perferendis voluptate
-        porro dignissimos aperiam perspiciatis repellendus, soluta, vero commodi
-        reiciendis nam veniam ullam iusto ratione!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque
-        corporis dicta exercitationem accusantium aut perferendis voluptate
-        porro dignissimos aperiam perspiciatis repellendus, soluta, vero commodi
-        reiciendis nam veniam ullam iusto ratione!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque
-        corporis dicta exercitationem accusantium aut perferendis voluptate
-        porro dignissimos aperiam perspiciatis repellendus, soluta, vero commodi
-        reiciendis nam veniam ullam iusto ratione!
-      </p>
-    </div>
   </div>
+
+  <script>
+    // LOCOMOTIVE
+    // import LocomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll";
+
+    // const scroller = new LocomotiveScroll({
+    //   el: document.querySelector("[data-scroll-container]"),
+    //   smooth: true,
+    // });
+
+    // LENIS
+    import Lenis from "lenis";
+
+    const lenis = new Lenis();
+
+    lenis.on("scroll", (e) => {
+      console.log(e);
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // MOTION.DEV
+    // import { animate, scroll } from "motion";
+
+    // document.querySelectorAll("section > div").forEach((item) => {
+    //   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
+    //     target: item,
+    //     offset: ["start end", "end end", "start start", "end start"],
+    //   });
+    // });
+  </script>
 </DefaultLayout>
-
-<script>
-  import LocomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll";
-
-  const scroller = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-  });
-</script>
