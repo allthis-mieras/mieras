@@ -56,12 +56,15 @@ import { Icon } from "astro-icon";
     cursor: pointer;
     z-index: 999;
     border-radius: 100vw;
+    background: var(--font-color);
+  }
+
+  #randomizer:hover {
     background: linear-gradient(
       -30deg,
       var(--first-color-dark),
       var(--last-color-dark)
     );
-
     background-size: 200% 200%;
     animation: gradient 2s ease infinite;
   }
@@ -73,13 +76,16 @@ import { Icon } from "astro-icon";
   }
 
   .darkmode #randomizer {
+    background: var(--last-color);
+  }
+  .darkmode #randomizer:hover {
     background: linear-gradient(-30deg, var(--first-color), var(--last-color));
     background-size: 200% 200%;
     animation: gradient 1s ease infinite;
   }
 
   .darkmode #randomizer [astro-icon] {
-    color: var(--first-color-dark);
+    color: var(--last-color-dark);
   }
 </style>
 <script>

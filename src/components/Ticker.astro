@@ -36,7 +36,7 @@ const translateDirection =
     /* overflow: hidden; */
     white-space: nowrap;
     /* background-color: #fff960; */
-    color: #000;
+    color: var(--font-color);
     display: flex;
     padding: 0.2rem var(--gap-default);
     border-radius: var(--radius-default);
@@ -45,14 +45,14 @@ const translateDirection =
     display: flex;
     flex-wrap: nowrap;
     animation: marquee var(--speed) linear infinite;
-    gap: calc(2 * var(--gap-default));
+    gap: var(--space-m);
   }
   .item-collection {
     display: flex;
     justify-content: center;
     display: flex;
     flex-wrap: nowrap;
-    gap: calc(2 * var(--gap-default));
+    gap: var(--space-m);
   }
 
   .item-collection-1 {

@@ -19,8 +19,8 @@ import logo from "../assets/img/logo.svg";
           <slot />
         </ul>
       </nav>
-      <Background />
       <DarkMode />
+      <Background />
       <ResponsiveToggle />
     </div>
     <nav class="mobile-menu" aria-label="Main navigation mobile">
@@ -322,9 +322,9 @@ import logo from "../assets/img/logo.svg";
         .has-dropdown > button:hover,
         .has-dropdown > button:focus {
           text-decoration: underline;
-          text-decoration-thickness: 1px;
+          text-decoration-thickness: 2px;
           text-decoration-style: wavy;
-          text-underline-offset: 7px;
+          text-underline-offset: 0.5rem;
         }
 
         .is-active {

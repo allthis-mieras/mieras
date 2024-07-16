@@ -12,17 +12,13 @@ const { label } = Astro.props;
 <style>
   span {
     font-family: var(--font-family-special);
-    font-size: var(--step-1);
-    padding: 2vw 2.5vw 2.25vw 2.5vw;
-    color: var(--first-color-dark);
-    background-color: var(--first-color);
+    font-size: var(--step-4);
+    padding: calc(var(--space-3xl) * 0.85) var(--space-3xl) var(--space-3xl)
+      var(--space-3xl);
+    color: var(--background);
+    background-color: var(--font-color);
     text-edge: cap alphabetic;
     leading-trim: both;
-  }
-
-  .darkmode span {
-    color: var(--first-color);
-    background-color: var(--first-color-dark);
   }
 
   /* span::after {
