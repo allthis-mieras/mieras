@@ -14,15 +14,15 @@ const translateDirection =
 ---
 
 <section class="stretch containe my-32">
-  <div class="ticker-wrap flex">
+  <div class="ticker-wrap">
     <div
-      class="ticker flex gap-4"
+      class="ticker flex"
       style={`--speed: ${speed}s; --translate-direction: ${translateDirection};`}
     >
-      <span class="item-collection item-collection-1 gap-4">
+      <span class="item-collection item-collection-1">
         <slot />
       </span>
-      <span class="item-collection item-collection-2 gap-4">
+      <span class="item-collection item-collection-2">
         <slot />
       </span>
     </div>
@@ -45,12 +45,14 @@ const translateDirection =
     display: flex;
     flex-wrap: nowrap;
     animation: marquee var(--speed) linear infinite;
+    gap: calc(2 * var(--gap-default));
   }
   .item-collection {
     display: flex;
     justify-content: center;
     display: flex;
     flex-wrap: nowrap;
+    gap: calc(2 * var(--gap-default));
   }
 
   .item-collection-1 {
