@@ -6,19 +6,26 @@
   --font-measure: 70ch;
   --font-family-default: 'Inter', sans-serif;
   --font-family-special: 'manofa-condensed', sans-serif;
-  --font-color: var(--neutral-900);
+  /* --font-color: var(--neutral-900); */
+  --font-color: var(--last-color-dark);
+  
+  
   --action-color: var(--neutral-900);
   --action-color-state: var(--neutral-500);
-  --background: var(--neutral-100);
+  /* --background: var(--neutral-100); */
+  --background: var(--last-color-dark);
   --primary-background: var(--primary-100);
   --neutral-background: var(--neutral-200);
 }
 
 .darkmode {
   --font-color: var(--neutral-100);
+  --font-color: var(--first-color);
   --action-color: var(--neutral-100);
   --action-color-state: var(--neutral-500);
-  --background: var(--dark-100);
+  /* --background: var(--dark-100); */
+  --background: var(--first-color);
+
   --primary-background: var(--primary-500);
   --neutral-background: var(--neutral-900);
 }
