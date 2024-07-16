@@ -1,0 +1,110 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div id="randomizer">
+  <Icon pack="ion" name="star-outline" />
+</div>
+
+<style is:global>
+  :root {
+    --first-color: hsl(0, 0%, 100%);
+    --last-color: hsl(0, 0%, 0%);
+    --first-color-dark: hsl(0, 0%, 30%);
+    --last-color-dark: hsl(0, 0%, 15%);
+  }
+
+  body {
+    background: linear-gradient(
+      to bottom,
+      var(--first-color),
+      var(--last-color)
+    );
+  }
+
+  body.darkmode {
+    background: linear-gradient(
+      to top,
+      var(--first-color-dark),
+      var(--last-color-dark)
+    );
+  }
+
+  #randomizer {
+    padding: 10px;
+
+    cursor: pointer;
+    z-index: 999;
+    background: linear-gradient(
+      to bottom,
+      var(--first-color),
+      var(--last-color)
+    );
+    border-radius: 100vw;
+  }
+
+  .dark-mode #randomizer {
+    background: linear-gradient(
+      to top,
+      var(--first-color-dark),
+      var(--last-color-dark)
+    );
+    border-radius: 100vw;
+  }
+  #randomizer [astro-icon] {
+    width: 1rem;
+    color: var(--action-color);
+  }
+
+  .accent-element {
+    color: var(--accent-color);
+  }
+</style>
+<script>
+  const random = (min, max) => Math.random() * (max - min) + min;
+
+  const randomColor = () => {
+    const h = Math.floor(random(0, 360));
+    const s = Math.floor(random(50, 100));
+    const l = Math.floor(random(50, 100));
+    return { h, s, l };
+  };
+
+  const hslToString = ({ h, s, l }) => `hsl(${h}, ${s}%, ${l}%)`;
+
+  const darkenColor = ({ h, s, l }) => {
+    const darkL = l * 0.2; // Reduce lightness to 50%
+    return { h, s, l: darkL };
+  };
+
+  const applyRandomColors = () => {
+    const gradient = document.body;
+    const firstColor = randomColor();
+    const lastColor = randomColor();
+
+    gradient.style.setProperty("--first-color", hslToString(firstColor));
+    gradient.style.setProperty("--last-color", hslToString(lastColor));
+
+    if (gradient.classList.contains("darkmode")) {
+      const darkFirstColor = darkenColor(firstColor);
+      const darkLastColor = darkenColor(lastColor);
+      gradient.style.setProperty(
+        "--first-color-dark",
+        hslToString(darkFirstColor)
+      );
+      gradient.style.setProperty(
+        "--last-color-dark",
+        hslToString(darkLastColor)
+      );
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const randomizerButton = document.querySelector("#randomizer");
+    applyRandomColors(); // Apply initial colors
+
+    if (randomizerButton) {
+      randomizerButton.onclick = applyRandomColors; // Reapply colors on button click
+    }
+  });
+</script>

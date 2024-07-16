@@ -5,7 +5,7 @@
   --gap-default: 0.5rem;
   --font-measure: 70ch;
   --font-family-default: 'Inter', sans-serif;
-  --font-family-special: 'Open Sans', sans-serif;
+  --font-family-special: 'manofa-condensed', sans-serif;
   --font-color: var(--neutral-900);
   --action-color: var(--primary-300);
   --action-color-state: var(--primary-500);

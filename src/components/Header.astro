@@ -1,10 +1,10 @@
 ---
-import Navigation from '../components/Navigation.astro'
-import { SkipLinks } from 'accessible-astro-components'
-import { Icon } from 'astro-icon'
+import Navigation from "../components/Navigation.astro";
+import { SkipLinks } from "accessible-astro-components";
+import { Icon } from "astro-icon";
 ---
 
-<header>
+<header data-scroll-section>
   <SkipLinks />
   <Navigation>
     <li class="menu-item">
@@ -28,10 +28,17 @@ import { Icon } from 'astro-icon'
       </ul>
     </li>
     <li class="menu-item">
-      <a href="https://accessible-astro.dev" title="external link" rel="external noopener noreferrer">External Link</a>
+      <a
+        href="https://accessible-astro.dev"
+        title="external link"
+        rel="external noopener noreferrer">External Link</a
+      >
     </li>
     <li class="menu-item type-icon">
-      <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the GitHub page">
+      <a
+        href="https://github.com/markteekman/accessible-astro-starter"
+        title="Go to the GitHub page"
+      >
         <Icon pack="ion" name="logo-github" />
       </a>
     </li>
@@ -39,26 +46,9 @@ import { Icon } from 'astro-icon'
 </header>
 
 <style lang="scss" is:global>
-  @use '../assets/scss/base/outline' as *;
+  @use "../assets/scss/base/outline" as *;
 
   header {
-    .type-icon a {
-      display: block;
-
-      [astro-icon] {
-        margin-top: -4px;
-        width: 30px;
-
-        path {
-          fill: var(--action-color);
-        }
-      }
-
-      &:hover {
-        [astro-icon] path {
-          fill: var(--action-color-state);
-        }
-      }
-    }
+    z-index: 999;
   }
 </style>

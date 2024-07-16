@@ -1,5 +1,22 @@
 @use 'node_modules/utopia-core-scss/src/utopia' as utopia;
 
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1920,24,1.618,5,2,&s=0.75|0.5|0.5|0.1,1.5|2|2.5|3|4|5|6|7|7,s-l&g=s,l,xl,12 */
+
+:root {
+    @include utopia.generateTypeScale(("minWidth": 320,
+            "maxWidth": 1920,
+            "minFontSize": 16,
+            "maxFontSize": 24,
+            "minTypeScale": 1.2,
+            "maxTypeScale": 1.618,
+            "positiveSteps": 5,
+            "negativeSteps": 2,
+            "prefix": "step-",
+            "relativeTo": "viewport-width"
+        ));
+}
+
+
 /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1240,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
