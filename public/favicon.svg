@@ -1,9 +1,21 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_907_31" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
-<rect width="512" height="512" rx="80" fill="#161618"/>
-</mask>
-<g mask="url(#mask0_907_31)">
-<path d="M166.892 69.3845H390.357L226.065 315.018H2.6001L166.892 69.3845Z" fill="#42E0CE"/>
-<path d="M176.677 337.783L113.043 432.923H347.108L511.4 187.29H338.645L237.988 337.783H176.677Z" fill="#A14FD6"/>
-</g>
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
+    <circle cx="48" cy="48" r="48" fill="#D9D9D9"/>
+<circle cx="48" cy="48" r="48" fill="url(#gradient)"/>
+<defs>
+<linearGradient id="gradient" x1="48" y1="0" x2="48" y2="162.895" gradientUnits="userSpaceOnUse">
+<stop stop-color="#EF8D45"/>
+<stop offset="0.48" stop-color="#B3727E"/>
+<stop offset="1" stop-color="#454746"/>
+</linearGradient>
+</defs>
+    <style>
+        path { fill: #111; }
+        @media (prefers-color-scheme: dark) {
+            path { fill: #FFF500; }
+        }
+    </style>
 </svg>
+

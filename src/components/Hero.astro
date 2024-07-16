@@ -7,7 +7,7 @@ const { src = "/astronaut-hero-img.webp" } = Astro.props;
 ---
 
 <section class="stretch container" data-scroll-section>
-  <div class="content">
+  <div class="content flex flex-col justify-center">
     <h1>Maarten Mieras</h1>
     <h2>digital designer based in rotterdam</h2>
   </div>
@@ -58,6 +58,5 @@ const { src = "/astronaut-hero-img.webp" } = Astro.props;
   }
   h2 {
     font-size: var(--step-5);
-    max-width: 8ch;
   }
 </style>
