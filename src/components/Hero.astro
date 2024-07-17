@@ -1,8 +1,14 @@
 ---
+import CircleText from "../components/CircleText.astro";
 ---
 
-<section class="stretch container" data-scroll-section>
+<section class="container relative stretch" data-scroll-section>
   <div data-scroll class="content">
+    <CircleText
+      rotateSpeed="40s"
+      rotateDirection="default"
+      text="Open for work • Get in touch! • Available now • "
+    />
     <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
       Maarten Mieras
     </h1>
@@ -51,6 +57,7 @@
   <style lang="scss">
     .content {
       padding: 3vh 0 6vh 0;
+      position: relative;
     }
 
     h1,

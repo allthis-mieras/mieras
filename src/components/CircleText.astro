@@ -1,0 +1,114 @@
+---
+interface Props {
+  rotateSpeed?: string;
+  rotateDirection?: "normal" | "reverse";
+  text?: string;
+}
+
+const {
+  rotateSpeed = "5s",
+  rotateDirection = "normal",
+  text = "Text rotating around a circle path with SVG!",
+}: Props = Astro.props;
+---
+
+<div id="container">
+  <div id="circle">
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      width="300px"
+      height="300px"
+      viewBox="0 0 300 300"
+      enable-background="new 0 0 300 300"
+      xml:space="preserve"
+    >
+      <defs>
+        <path
+          id="circlePath"
+          d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
+        ></path>
+      </defs>
+      <circle cx="150" cy="100" r="75" fill="none"></circle>
+      <g>
+        <use xlink:href="#circlePath" fill="none"></use>
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">{text}</textPath>
+        </text>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<style>
+  :root {
+    --rotate-speed: 5s;
+    --rotate-direction: normal;
+  }
+
+  #container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+
+  #circle {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+  }
+
+  #circle text {
+    font-family: var(--font-family-special);
+    font-size: 0.875rem;
+    color: var(--font-color);
+    letter-spacing: 0.135em;
+    opacity: 0.8;
+    /* mix-blend-mode: multiply; */
+  }
+
+  #circle svg {
+    position: relative;
+
+    width: auto;
+    height: clamp(5rem, 20vw + 6rem, 30rem);
+
+    animation: rotate var(--rotate-speed) infinite linear;
+    animation-direction: var(--rotate-direction);
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0);
+    }
+  }
+</style>
+
+<script>
+  // Update CSS variables based on props
+  const setRotateSpeed = () => {
+    if (document.documentElement) {
+      document.documentElement.style.setProperty("--rotate-speed", rotateSpeed);
+    }
+  };
+
+  const setRotateDirection = () => {
+    if (document.documentElement) {
+      document.documentElement.style.setProperty(
+        "--rotate-direction",
+        rotateDirection
+      );
+    }
+  };
+
+  setRotateSpeed();
+  setRotateDirection();
+</script>

@@ -101,7 +101,7 @@ import { Icon } from "astro-icon";
   const hslToString = ({ h, s, l }) => `hsl(${h}, ${s}%, ${l}%)`;
 
   const darkenColor = ({ h, s, l }) => {
-    const darkL = l * 0.2; // Reduce lightness to 50%
+    const darkL = l * 0.2; // Reduce lightness to 20%
     return { h, s, l: darkL };
   };
 
@@ -109,22 +109,16 @@ import { Icon } from "astro-icon";
     const gradient = document.body;
     const firstColor = randomColor();
     const lastColor = randomColor();
+    const darkFirstColor = darkenColor(firstColor);
+    const darkLastColor = darkenColor(lastColor);
 
     gradient.style.setProperty("--first-color", hslToString(firstColor));
     gradient.style.setProperty("--last-color", hslToString(lastColor));
-
-    if (gradient.classList.contains("darkmode")) {
-      const darkFirstColor = darkenColor(firstColor);
-      const darkLastColor = darkenColor(lastColor);
-      gradient.style.setProperty(
-        "--first-color-dark",
-        hslToString(darkFirstColor)
-      );
-      gradient.style.setProperty(
-        "--last-color-dark",
-        hslToString(darkLastColor)
-      );
-    }
+    gradient.style.setProperty(
+      "--first-color-dark",
+      hslToString(darkFirstColor)
+    );
+    gradient.style.setProperty("--last-color-dark", hslToString(darkLastColor));
   };
 
   document.addEventListener("DOMContentLoaded", () => {

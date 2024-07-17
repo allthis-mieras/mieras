@@ -40,8 +40,11 @@ body {
 body {
   display: flex;
   flex-direction: column;
+   --font-color: var(--last-color-dark);
+   --background: var(--first-color);
   color: var(--font-color);
   background-color: var(--background);
+  
   
 }
 
