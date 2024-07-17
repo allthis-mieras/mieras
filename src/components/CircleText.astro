@@ -51,8 +51,8 @@ const {
 
   #container {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -4vw;
+    top: -4vh;
     z-index: 10;
   }
 
@@ -74,10 +74,8 @@ const {
 
   #circle svg {
     position: relative;
-
     width: auto;
     height: clamp(5rem, 20vw + 6rem, 30rem);
-
     animation: rotate var(--rotate-speed) infinite linear;
     animation-direction: var(--rotate-direction);
   }
