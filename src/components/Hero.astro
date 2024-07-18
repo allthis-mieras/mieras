@@ -2,7 +2,7 @@
 import CircleText from "../components/CircleText.astro";
 ---
 
-<section class="container relative stretch" data-scroll-section>
+<section class="stretch container relative" data-scroll-section>
   <div data-scroll class="content">
     <CircleText
       rotateSpeed="40s"
@@ -17,8 +17,11 @@ import CircleText from "../components/CircleText.astro";
       <span data-scroll data-scroll-speed="1" data-scroll-position="top"
         >digital designer</span
       >
-      <span data-scroll data-scroll-speed="2" data-scroll-position="top"
-        >based in rotterdam</span
+      <span
+        data-scroll
+        data-scroll-speed="2"
+        data-scroll-position="top"
+        class="smaller">based in rotterdam</span
       >
     </h2>
   </div>

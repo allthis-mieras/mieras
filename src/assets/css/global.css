@@ -13,6 +13,7 @@
   --action-color: var(--last-color-dark);
   --action-color-state: var(---first-color-dark);
   --background: var(--first-color);
+  --background-overlay: rgba(255,255,255,0.3);
   --primary-background: var(--primary-100);
   --neutral-background: var(--neutral-200);
 }
@@ -26,7 +27,7 @@
   --action-color-state: var(---first-color);
   
   --background: var(--last-color-dark);
-
+--background-overlay: rgba(0,0,0,0.2);
   --primary-background: var(--primary-500);
   --neutral-background: var(--neutral-900);
 }
