@@ -5,12 +5,12 @@ import CircleText from "../components/CircleText.astro";
 ---
 
 <section class="relative w-full">
+  <CircleText
+    rotateSpeed="40s"
+    rotateDirection="normal"
+    text="Open for work • Get in touch! • Available now • "
+  />
   <div class="content">
-    <CircleText
-      rotateSpeed="40s"
-      rotateDirection="normal"
-      text="Open for work • Get in touch! • Available now • "
-    />
     <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
       Maarten Mieras
     </h1>
@@ -39,14 +39,16 @@ import CircleText from "../components/CircleText.astro";
 <style lang="scss">
   section {
     position: relative;
+    display: block;
     overflow: hidden;
     mix-blend-mode: var(--blend-img);
+    height: auto;
   }
 
   .content {
     padding: 3vh 0 6vh 0;
     position: relative;
-    min-height: 150vh;
+
     overflow: hidden;
     isolation: isolate;
     display: flex;
@@ -88,5 +90,11 @@ import CircleText from "../components/CircleText.astro";
 
   :global(.darkmode img.portrait) {
     opacity: 0.6;
+  }
+
+  @media screen and (min-width: 600px) {
+    .content {
+      min-height: 150vh;
+    }
   }
 </style>
