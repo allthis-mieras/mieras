@@ -4,8 +4,8 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Hero from "../components/Hero.astro";
 import Intro from "../components/Intro.astro";
 
-import Ticker from "../components/Ticker.astro";
-import TickerItem from "../components/TickerItem.astro";
+import Marquee from "../components/Marquee.astro";
+import MarqueeItem from "../components/MarqueeItem.astro";
 import Work from "../components/Work.astro";
 import Photography from "../components/Photography.astro";
 ---
@@ -14,20 +14,20 @@ import Photography from "../components/Photography.astro";
   <div data-scroll-container class="relative">
     <Hero />
     <Intro />
-    <Ticker speed={120} direction="left">
-      <TickerItem label="Concept Development" />
-      <TickerItem label="Moodboarding" />
-      <TickerItem label="UX Research" />
-      <TickerItem label="UX / UI" />
-      <TickerItem label="Prototyping" />
-      <TickerItem label="Design Sprints" />
-      <TickerItem label="Creative Direction" />
-      <TickerItem label="(Rapid) Prototyping" />
-      <TickerItem label="Design Systems" />
-      <TickerItem label="Design Critiques" />
-      <TickerItem label="Pitching & Presenting" />
-      <TickerItem label="Front-End Development" />
-    </Ticker>
+    <Marquee direction="left" speed={50}>
+      <MarqueeItem label="Concept Development" />
+      <MarqueeItem label="Moodboarding" />
+      <MarqueeItem label="UX Research" />
+      <MarqueeItem label="UX / UI" />
+      <MarqueeItem label="Prototyping" />
+      <MarqueeItem label="Design Sprints" />
+      <MarqueeItem label="Creative Direction" />
+      <MarqueeItem label="(Rapid) Prototyping" />
+      <MarqueeItem label="Design Systems" />
+      <MarqueeItem label="Design Critiques" />
+      <MarqueeItem label="Pitching & Presenting" />
+      <MarqueeItem label="Front-End Development" />
+    </Marquee>
     <div class="container my-64 grid gap-4 md:grid-cols-2">
       <Work />
       <Photography />
@@ -45,14 +45,14 @@ import Photography from "../components/Photography.astro";
 
         // LENIS
         import Lenis from "lenis";
-
         const lenis = new Lenis();
 
-        lenis.on("scroll", (e) => {
-          console.log(e);
+        // Voeg types toe aan de parameters om TypeScript-fouten te voorkomen
+        lenis.on("scroll", (e: any) => {
+          // console.log(e);
         });
 
-        function raf(time) {
+        function raf(time: number) {
           lenis.raf(time);
           requestAnimationFrame(raf);
         }

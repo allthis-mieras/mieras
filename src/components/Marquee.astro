@@ -1,0 +1,131 @@
+---
+interface Props {
+  speed?: number;
+  direction?: "left" | "right";
+  pauseOnHover?: boolean;
+  fitContent?: boolean;
+  fitContentAbsolute?: boolean;
+}
+
+// Stel standaardwaarden in
+const defaultSpeed = 40;
+const defaultDirection = "left";
+const defaultPauseOnHover = false;
+const defaultFitContent = false;
+const defaultFitContentAbsolute = false;
+
+const {
+  speed = defaultSpeed,
+  direction = defaultDirection,
+  pauseOnHover = defaultPauseOnHover,
+  fitContent = defaultFitContent,
+  fitContentAbsolute = defaultFitContentAbsolute,
+} = Astro.props;
+
+const animationDirection = direction === "left" ? "normal" : "reverse";
+const hoverClass = pauseOnHover ? "marquee--hover-pause" : "";
+const fitContentClass = fitContent ? "marquee--fit-content" : "";
+const fitContentAbsoluteClass = fitContentAbsolute
+  ? "marquee--pos-absolute"
+  : "";
+---
+
+<section
+  class={`marquee my-32 ${hoverClass} ${fitContentClass} ${fitContentAbsoluteClass}`}
+>
+  <div
+    class={`marquee__content ${animationDirection}`}
+    style={`--duration: ${speed}s;`}
+  >
+    <slot />
+  </div>
+  <div
+    class={`marquee__content ${animationDirection}`}
+    style={`--duration: ${speed}s;`}
+  >
+    <slot />
+  </div>
+</section>
+
+<style>
+  .marquee {
+    --gap: var(--gap-default);
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+  }
+
+  .marquee__content {
+    --duration: 10s;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+
+    animation: scroll var(--duration) linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  /* Pause animation when reduced-motion is set */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__content {
+      animation-play-state: paused !important;
+    }
+  }
+
+  /* Reverse animation */
+  .reverse {
+    animation-direction: reverse;
+  }
+
+  /* Pause on hover */
+  .marquee--hover-pause:hover .marquee__content {
+    animation-play-state: paused;
+  }
+
+  /* Attempt to size parent based on content. Keep in mind that the parent width is equal to both content containers that stretch to fill the parent. */
+  .marquee--fit-content {
+    max-width: fit-content;
+  }
+
+  /* A fit-content sizing fix: Absolute position the duplicate container. This will set the size of the parent wrapper to a single child container. */
+  .marquee--pos-absolute .marquee__content:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Enable position absolute animation on the duplicate content (last-child) */
+  .enable-animation .marquee--pos-absolute .marquee__content:last-child {
+    animation-name: scroll-abs;
+  }
+
+  @keyframes scroll-abs {
+    from {
+      transform: translateX(calc(100% + var(--gap)));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  :global(.marquee__content > *) {
+    flex: 0 0 auto;
+
+    /* margin: 2px;
+    padding: 1rem 2rem; */
+    border-radius: 100vw;
+    text-align: center;
+  }
+</style>

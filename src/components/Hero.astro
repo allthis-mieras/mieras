@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
+import Portrait from "../assets/img/mieras-portrait.png"; // Image is 1600x900
 import CircleText from "../components/CircleText.astro";
 ---
 
-<section class="stretch container relative" data-scroll-section>
+<section class="relative w-full" data-scroll-section>
   <div data-scroll class="content">
     <CircleText
       rotateSpeed="40s"
@@ -25,60 +27,41 @@ import CircleText from "../components/CircleText.astro";
       >
     </h2>
   </div>
-  <!-- 
-<section class="my-24 hero">
-  <div class="container">
-    <div class="grid items-center grid-cols-1 gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-6xl text-center md:text-left lg:text-8xl">
-          <slot
-            ><span class="text-gradient">Accessible</span> Starter for Astro</slot
-          >
-        </h1>
-        <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a
-            class="button has-icon"
-            href="https://github.com/markteekman/accessible-astro-starter"
-          >
-            <Icon pack="ion" name="star-outline" />
-            Star on GitHub
-          </a>
-          <a
-            class="button has-icon color-secondary"
-            href="https://github.com/markteekman/accessible-astro-starter/blob/main/README.md"
-          >
-            <Icon pack="ion" name="bookmark-outline" />
-            Read the Docs
-          </a>
-        </div>
-      </div>
-      <img class="hidden lg:block" src={src} alt="" decoding="async" />
-    </div>
-  </div>
-</section> -->
-
-  <style lang="scss">
-    .content {
-      padding: 3vh 0 6vh 0;
-      position: relative;
-    }
-
-    h1,
-    h2 {
-      text-align: center;
-      text-transform: uppercase;
-      line-height: 1;
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-size: var(--step-1);
-      font-weight: 400;
-      letter-spacing: 0.025em;
-    }
-
-    h2 {
-      font-size: var(--step-5);
-    }
-  </style>
+  <Image
+    src={Portrait}
+    widths={[240, 540, 720, Portrait.width]}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${Portrait.width}px`}
+    alt="A description of my image."
+    class="w-full"
+  />
 </section>
+
+<style lang="scss">
+  .content {
+    padding: 3vh 0 6vh 0;
+    position: relative;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: var(--step-1);
+    font-weight: 400;
+    letter-spacing: 0.025em;
+  }
+
+  h2 {
+    font-size: var(--step-5);
+  }
+
+  img {
+    mix-blend-mode: multiply;
+    isolation: isolate;
+  }
+</style>

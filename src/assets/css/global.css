@@ -2,7 +2,7 @@
   --radius-small: 0.125rem;
   --radius-large: 0.5rem;
   --radius-default: var(--radius-large);
-  --gap-default: 0.5rem;
+  --gap-default: 1rem;
   --font-measure: 70ch;
   --font-family-default: 'Inter', sans-serif;
   --font-family-special: 'manofa-condensed', sans-serif;

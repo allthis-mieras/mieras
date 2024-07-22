@@ -1,0 +1,39 @@
+---
+export const props = {
+  speed: 2, // Smoothness speed
+};
+---
+
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  #smooth-wrapper {
+    overflow: hidden;
+  }
+
+  #smooth-content {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  import ScrollTrigger from "gsap-trial/ScrollTrigger";
+  import ScrollSmoother from "gsap-trial/ScrollSmoother";
+  import { gsap } from "gsap";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  const constructScroller = ({ speed }) => {
+    console.log("Smooth scroll speed:", { speed }); // Console log om de speed prop te controleren
+    ScrollSmoother.create({
+      smooth: { speed },
+    });
+  };
+
+  document.addEventListener("astro:page-load", constructScroller);
+  document.addEventListener("DOMContentLoaded", constructScroller);
+</script>

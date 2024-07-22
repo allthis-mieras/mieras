@@ -1,0 +1,104 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import SmoothScrollWrapper from "../components/SmoothScrollWrapper.astro";
+import MarqueeGsap from "../components/MarqueeGsap.astro";
+
+import Hero from "../components/Hero.astro";
+import Intro from "../components/Intro.astro";
+
+import Ticker from "../components/Marquee.astro";
+import TickerItem from "../components/MarqueeItem.astro";
+import Work from "../components/Work.astro";
+import Photography from "../components/Photography.astro";
+---
+
+<DefaultLayout title="Home">
+  <SmoothScrollWrapper speed={2}>
+    <section class="intro container">
+      <h1>Marquee effect with GSAP and Swiper</h1>
+      <p class="text-8xl">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
+        quisquam dolores voluptates quae voluptatibus molestiae sequi non
+        eveniet facilis totam repellendus commodi dolore harum facere ratione
+        consequatur, tempora doloribus quasi. Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Distinctio quisquam dolores voluptates
+        quae voluptatibus molestiae sequi non eveniet facilis totam repellendus
+        commodi dolore harum facere ratione consequatur, tempora doloribus
+        quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Distinctio quisquam dolores voluptates quae voluptatibus molestiae sequi
+        non eveniet facilis totam repellendus commodi dolore harum facere
+        ratione consequatur, tempora doloribus quasi. Lorem ipsum dolor sit
+        amet, consectetur adipisicing elit. Distinctio quisquam dolores
+        voluptates quae voluptatibus molestiae sequi non eveniet facilis totam
+        repellendus commodi dolore harum facere ratione consequatur, tempora
+        doloribus quasi. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Distinctio quisquam dolores voluptates quae voluptatibus molestiae
+        sequi non eveniet facilis totam repellendus commodi dolore harum facere
+        ratione consequatur, tempora doloribus quasi. Lorem ipsum dolor sit
+        amet, consectetur adipisicing elit. Distinctio quisquam dolores
+        voluptates quae voluptatibus molestiae sequi non eveniet facilis totam
+        repellendus commodi dolore harum facere ratione consequatur, tempora
+        doloribus quasi. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Distinctio quisquam dolores voluptates quae voluptatibus molestiae
+        sequi non eveniet facilis totam repellendus commodi dolore harum facere
+        ratione consequatur, tempora doloribus quasi. Lorem ipsum dolor sit
+        amet, consectetur adipisicing elit. Distinctio quisquam dolores
+        voluptates quae voluptatibus molestiae sequi non eveniet facilis totam
+        repellendus commodi dolore harum facere ratione consequatur, tempora
+        doloribus quasi. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Distinctio quisquam dolores voluptates quae voluptatibus molestiae
+        sequi non eveniet facilis totam repellendus commodi dolore harum facere
+        ratione consequatur, tempora doloribus quasi. Lorem ipsum dolor sit
+        amet, consectetur adipisicing elit. Distinctio quisquam dolores
+        voluptates quae voluptatibus molestiae sequi non eveniet facilis totam
+        repellendus commodi dolore harum facere ratione consequatur, tempora
+        doloribus quasi. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Distinctio quisquam dolores voluptates quae voluptatibus molestiae
+        sequi non eveniet facilis totam repellendus commodi dolore harum facere
+        ratione consequatur, tempora doloribus quasi. Lorem ipsum dolor sit
+        amet, consectetur adipisicing elit. Distinctio quisquam dolores
+        voluptates quae voluptatibus molestiae sequi non eveniet facilis totam
+        repellendus commodi dolore harum facere ratione consequatur, tempora
+        doloribus quasi.
+      </p>
+    </section>
+
+    <!-- 
+    <MarqueeGsap
+      direction="left"
+      speed={2}
+      gap="10px"
+      itemWidth="40vw"
+      itemHeight="150px"
+    >
+      <div class="marquee-item">Item 1</div>
+      <div class="marquee-item">Item 2</div>
+      <div class="marquee-item">Item 3</div>
+      <div class="marquee-item">Item 4</div>
+      <div class="marquee-item">Item 5</div>
+    </MarqueeGsap>
+
+    <MarqueeGsap
+      direction="right"
+      speed={3}
+      gap="15px"
+      itemWidth="30vw"
+      itemHeight="200px"
+    >
+      <div class="marquee-item">Item A</div>
+      <div class="marquee-item">Item B</div>
+      <div class="marquee-item">Item C</div>
+      <div class="marquee-item">Item D</div>
+      <div class="marquee-item">Item E</div>
+    </MarqueeGsap> -->
+
+    <footer>
+      <div>
+        <h2>Credits</h2>
+        <a href="https://www.humming.design" target="_blank">Humming</a>
+        <a href="https://greensock.com" target="_blank">GSAP</a>
+        <a href="https://swiperjs.com" target="_blank">Swiper</a>
+      </div>
+    </footer>
+  </SmoothScrollWrapper>
+</DefaultLayout>
