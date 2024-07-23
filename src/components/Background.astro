@@ -15,19 +15,12 @@ import { Icon } from "astro-icon";
   }
 
   body {
+    background: linear-gradient(to right, #fff, #ccc);
     background: linear-gradient(-45deg, var(--first-color), var(--last-color));
-    background-attachment: fixed;
-
-    /* background-image: linear-gradient(
-        -45deg,
-        var(--first-color),
-        var(--last-color)
-      ),
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 1920 1920' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    filter: contrast(200%) brightness(125%) grayscale(1); */
 
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    background-attachment: fixed;
   }
 
   body.darkmode {

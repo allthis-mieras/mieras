@@ -49,9 +49,9 @@ body {
    --background: var(--first-color);
   color: var(--font-color);
   background-color: var(--background);
-  
-  
 }
+
+
 
 body main {
   flex: 1 0 auto;
@@ -76,4 +76,8 @@ body .pagination a:focus-visible {
 body .pagination a:hover svg path,
 body .pagination a:focus-visible svg path {
   stroke: white;
+}
+
+.blend {
+  mix-blend-mode: multiply;
 }

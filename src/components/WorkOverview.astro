@@ -1,0 +1,18 @@
+---
+import WorkItem from "./WorkItem.astro";
+import { getCollection, getEntry } from "astro:content";
+
+const workItems = await getCollection("work");
+---
+
+<section class="work-overview-grid container md:grid-cols-6">
+  {workItems.map((item) => <WorkItem {...item.data} />)}
+</section>
+
+<style>
+  .work-overview-grid {
+    display: grid;
+    mix-blend-mode: multiply;
+    gap: 1rem;
+  }
+</style>
