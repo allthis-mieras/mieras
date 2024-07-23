@@ -11,64 +11,60 @@ import Photography from "../components/Photography.astro";
 ---
 
 <DefaultLayout title="Home">
-  <div data-scroll-container class="relative">
-    <Hero />
-    <Intro />
-    <Marquee direction="left" speed={50}>
-      <MarqueeItem label="Concept Development" />
-      <MarqueeItem label="Moodboarding" />
-      <MarqueeItem label="UX Research" />
-      <MarqueeItem label="UX / UI" />
-      <MarqueeItem label="Prototyping" />
-      <MarqueeItem label="Design Sprints" />
-      <MarqueeItem label="Creative Direction" />
-      <MarqueeItem label="(Rapid) Prototyping" />
-      <MarqueeItem label="Design Systems" />
-      <MarqueeItem label="Design Critiques" />
-      <MarqueeItem label="Pitching & Presenting" />
-      <MarqueeItem label="Front-End Development" />
-    </Marquee>
-    <div class="container my-64 grid gap-4 md:grid-cols-2">
-      <Work />
-      <Photography />
-    </div>
-
-    <div>
-      <script>
-        // LOCOMOTIVE
-        // import LocomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll";
-
-        // const scroller = new LocomotiveScroll({
-        //   el: document.querySelector("[data-scroll-container]"),
-        //   smooth: true,
-        // });
-
-        // LENIS
-        import Lenis from "lenis";
-        const lenis = new Lenis();
-
-        // Voeg types toe aan de parameters om TypeScript-fouten te voorkomen
-        lenis.on("scroll", (e: any) => {
-          // console.log(e);
-        });
-
-        function raf(time: number) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
-
-        // MOTION.DEV
-        // import { animate, scroll } from "motion";
-
-        // document.querySelectorAll("section > div").forEach((item) => {
-        //   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
-        //     target: item,
-        //     offset: ["start end", "end end", "start start", "end start"],
-        //   });
-        // });
-      </script>
-    </div>
+  <Hero />
+  <Intro />
+  <Marquee direction="left" speed={50}>
+    <MarqueeItem label="Concept Development" />
+    <MarqueeItem label="Moodboarding" />
+    <MarqueeItem label="UX Research" />
+    <MarqueeItem label="UX / UI" />
+    <MarqueeItem label="Prototyping" />
+    <MarqueeItem label="Design Sprints" />
+    <MarqueeItem label="Creative Direction" />
+    <MarqueeItem label="(Rapid) Prototyping" />
+    <MarqueeItem label="Design Systems" />
+    <MarqueeItem label="Design Critiques" />
+    <MarqueeItem label="Pitching & Presenting" />
+    <MarqueeItem label="Front-End Development" />
+  </Marquee>
+  <div class="container my-64 grid gap-4 md:grid-cols-2">
+    <Work />
+    <Photography />
   </div>
 </DefaultLayout>
+
+<script>
+  // LOCOMOTIVE
+  // import LocomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll";
+
+  // const scroller = new LocomotiveScroll({
+  //   el: document.querySelector("[data-scroll-container]"),
+  //   smooth: true,
+  // });
+
+  // LENIS
+  import Lenis from "lenis";
+  document.addEventListener("DOMContentLoaded", () => {
+    const lenis = new Lenis({
+      lerp: 0.1, // Lower values create a smoother scroll effect
+      smoothWheel: true, // Enables smooth scrolling for mouse wheel events
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  });
+
+  // MOTION.DEV
+  // import { animate, scroll } from "motion";
+
+  // document.querySelectorAll("section > div").forEach((item) => {
+  //   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
+  //     target: item,
+  //     offset: ["start end", "end end", "start start", "end start"],
+  //   });
+  // });
+</script>

@@ -5,11 +5,11 @@ import CircleText from "../components/CircleText.astro";
 ---
 
 <section class="relative w-full">
-  <CircleText
+  <!-- <CircleText
     rotateSpeed="40s"
     rotateDirection="normal"
     text="Open for work • Get in touch! • Available now • "
-  />
+  /> -->
   <div class="content">
     <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
       Maarten Mieras
@@ -26,48 +26,31 @@ import CircleText from "../components/CircleText.astro";
         class="smaller">based in rotterdam</span
       >
     </h2>
-    <Image
-      src={Portrait}
-      widths={[240, 540, 720, Portrait.width]}
-      sizes={`(max-width: 360px) 780px, (max-width: 720px) 1280px, (max-width: 1600px) 1920px, ${Portrait.width}px`}
-      alt="A description of my image."
-      class="portrait w-full"
-    />
   </div>
+
+  <Image
+    src={Portrait}
+    widths={[240, 540, 720, Portrait.width]}
+    sizes={`(max-width: 360px) 780px, (max-width: 720px) 1280px, (max-width: 1600px) 1920px, ${Portrait.width}px`}
+    alt="A description of my image."
+    class="portrait w-full"
+  />
 </section>
 
 <style lang="scss">
   section {
     position: relative;
-    display: block;
-    overflow: hidden;
     mix-blend-mode: var(--blend-img);
-    height: auto;
+    background: transparent;
+    border-radius: 2% 2% 0 0;
+    overflow: hidden;
   }
 
   .content {
-    padding: 3vh 0 6vh 0;
-    position: relative;
-
-    overflow: hidden;
-    isolation: isolate;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    mix-blend-mode: normal;
-    isolation: isolate;
-    color: var(--first-color);
-  }
-
-  img {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    isolation: isolate;
-    border-radius: 2% 2% 0 0;
+    color: var(--background);
   }
 
   h1,
@@ -76,6 +59,7 @@ import CircleText from "../components/CircleText.astro";
     text-transform: uppercase;
     line-height: 1;
     margin: 0 auto;
+    isolation: isolate;
   }
 
   h1 {
@@ -88,8 +72,19 @@ import CircleText from "../components/CircleText.astro";
     font-size: var(--step-5);
   }
 
+  img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+    mix-blend-mode: var(--blend-img);
+  }
+
   :global(.darkmode img.portrait) {
-    opacity: 0.6;
+    // opacity: 0.6;
   }
 
   @media screen and (min-width: 600px) {

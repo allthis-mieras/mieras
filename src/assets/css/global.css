@@ -11,12 +11,14 @@
   /* --background: var(--neutral-100); */
   --font-color: var(--last-color-dark);
   --action-color: var(--last-color-dark);
-  --action-color-state: var(---first-color-dark);
+  --action-color-state: var(--last-color-dark);
   --background: var(--first-color);
   --background-overlay: rgba(255,255,255,0.3);
   --primary-background: var(--primary-100);
   --neutral-background: var(--neutral-200);
-    --blend-img: multiply;
+  --blend-img:multiply ;
+    
+    
 }
 
 .darkmode {
@@ -25,14 +27,13 @@
   /* --background: var(--dark-100); */
   --font-color: var(--first-color);
   --action-color: var(--last-color);
-  --action-color-state: var(---first-color);
-
-  
+  --action-color-state: var(--last-color);
   --background: var(--last-color-dark);
---background-overlay: rgba(0,0,0,0.2);
+  --background-overlay: rgba(0,0,0,0.2);
   --primary-background: var(--primary-500);
   --neutral-background: var(--neutral-900);
   --blend-img: screen;
+
 }
 
 html,
