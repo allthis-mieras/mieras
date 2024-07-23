@@ -40,9 +40,11 @@ const {
   </head>
   <body>
     <Header />
-    <main id="main-content" transition:animate="fade">
+    <main id="main-content">
+      <!-- <main id="main-content" transition:animate="fade"> -->
       <slot />
+
+      <Footer />
     </main>
-    <Footer />
   </body>
 </html>

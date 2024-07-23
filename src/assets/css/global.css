@@ -16,7 +16,8 @@
   --background-overlay: rgba(255,255,255,0.3);
   --primary-background: var(--primary-100);
   --neutral-background: var(--neutral-200);
-  --blend-img:multiply ;
+  --blend-hero: overlay;
+  --blend-work: multiply:
     
     
 }
@@ -32,7 +33,8 @@
   --background-overlay: rgba(0,0,0,0.2);
   --primary-background: var(--primary-500);
   --neutral-background: var(--neutral-900);
-  --blend-img: screen;
+  --blend-hero: overlay;
+  --blend-work: overlay:
 
 }
 
@@ -78,6 +80,4 @@ body .pagination a:focus-visible svg path {
   stroke: white;
 }
 
-.blend {
-  mix-blend-mode: multiply;
-}
+

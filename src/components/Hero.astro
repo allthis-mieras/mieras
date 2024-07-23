@@ -4,7 +4,7 @@ import Portrait from "../assets/img/mieras-portrait.png"; // Image is 1600x900
 import CircleText from "../components/CircleText.astro";
 ---
 
-<section class="blend relative w-full">
+<section class="relative w-full">
   <!-- <CircleText
     rotateSpeed="40s"
     rotateDirection="normal"
@@ -51,7 +51,8 @@ import CircleText from "../components/CircleText.astro";
     position: relative;
     justify-content: center;
     flex-direction: column;
-    color: var(--background);
+    isolation: isolate;
+    color: var(--font-color);
     z-index: 5;
   }
 
@@ -80,7 +81,11 @@ import CircleText from "../components/CircleText.astro";
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    mix-blend-mode: var(--blend-img);
+    mix-blend-mode: var(--blend-hero);
+  }
+
+  :global(.darkmode .content) {
+    color: var(--first-color);
   }
 
   @media screen and (min-width: 600px) {
