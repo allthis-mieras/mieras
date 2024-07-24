@@ -55,21 +55,25 @@ const {
 
   :global(#container) {
     position: absolute;
-    position: fixed;
+    /* position: fixed; */
     right: 0rem;
     top: 0rem;
     z-index: 10;
-    isolation: isolate;
-    width: 400px;
+
+    width: clamp(8rem, 3.2rem + 24vw, 32rem);
     height: 100%;
   }
 
   #circle {
     position: sticky;
+    top: 2rem;
     width: 100%;
     aspect-ratio: 1;
-    /* padding-bottom: 100%; */
+
     overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   #circle text {
@@ -84,10 +88,12 @@ const {
 
   #circle svg {
     position: relative;
-    width: auto;
-    height: clamp(5rem, 20vw + 6rem, 30rem);
+
     animation: rotate var(--rotate-speed) infinite linear;
     animation-direction: var(--rotate-direction);
+    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
   }
 
   @keyframes rotate {

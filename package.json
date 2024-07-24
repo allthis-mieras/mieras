@@ -32,6 +32,8 @@
     "tailwindcss": "^3.2.7"
   },
   "dependencies": {
+    "@astrojs/solid-js": "^4.4.0",
+    "@types/swiper": "^6.0.0",
     "babel-preset-solid": "^1.8.18",
     "gsap": "^3.12.5",
     "gsap-trial": "^3.12.5",
@@ -39,6 +41,7 @@
     "locomotive-scroll": "^5.0.0-beta.13",
     "motion": "^10.18.0",
     "solid-js": "^1.8.18",
+    "swiper": "^11.1.5",
     "utopia-core-scss": "^1.0.1"
   }
 }

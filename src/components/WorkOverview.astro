@@ -3,16 +3,34 @@ import WorkItem from "./WorkItem.astro";
 import { getCollection, getEntry } from "astro:content";
 
 const workItems = await getCollection("work");
+workItems.sort((a, b) => b.data.year - a.data.year);
 ---
 
-<section class="work-overview-grid container md:grid-cols-6">
+<section class="work-overview-grid container">
   {workItems.map((item) => <WorkItem {...item.data} />)}
 </section>
 
 <style>
   .work-overview-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-auto-rows: auto; /* Basis hoogte voor items */
+    gap: var(--gap-default);
+  }
 
-    gap: 1rem;
+  .work-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .work-item:nth-child(2n) {
+    grid-row: span 2; /* Elke tweede item span 2 rows */
+  }
+
+  .work-item:nth-child(2n) .work-item-bg-video,
+  .work-item:nth-child(2n) .work-item-content {
+    height: 100%; /* Zorg ervoor dat de inhoud 100% hoogte heeft */
   }
 </style>

@@ -9,6 +9,7 @@ import MarqueeItem from "../components/MarqueeItem.astro";
 import Work from "../components/Work.astro";
 import Photography from "../components/Photography.astro";
 import WorkOverview from "../components/WorkOverview.astro";
+import MarqueeCarousel from "../components/MarqueeCarousel.astro";
 ---
 
 <DefaultLayout title="Home">
@@ -29,10 +30,7 @@ import WorkOverview from "../components/WorkOverview.astro";
     <MarqueeItem label="Front-End Development" />
   </Marquee>
   <WorkOverview />
-  <div class="container my-64 grid gap-4 md:grid-cols-2">
-    <Work />
-    <Photography />
-  </div>
+  <MarqueeCarousel />
 </DefaultLayout>
 
 <script>

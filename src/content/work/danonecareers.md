@@ -1,8 +1,8 @@
 ---
-title: "Olympics 2018 Sochi"
-client: "NOS"
-year: 2018
+title: "Careers website for Danone"
+client: "Danone"
+year: 2024
 role: ["UX Design", "Visual Design"]
 video: "./assets/work/mieras-os-preview-simple.mp4"
-size: "S"
+size: "L"
 ---

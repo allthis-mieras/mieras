@@ -1,8 +1,8 @@
 ---
-title: "Olympics 2018 Sochi"
-client: "NOS"
-year: 2018
+title: "Emerald Design System"
+client: "ABN AMRO"
+year: 2021
 role: ["UX Design", "Visual Design"]
 video: "./assets/work/mieras-os-preview-simple.mp4"
-size: "S"
+size: "L"
 ---
