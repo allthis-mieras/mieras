@@ -4,28 +4,30 @@ import Portrait from "../assets/img/mieras-portrait.png"; // Image is 1600x900
 import CircleText from "../components/CircleText.astro";
 ---
 
-<section class="relative w-full">
+<section class="w-full">
   <CircleText
     rotateSpeed="40s"
     rotateDirection="normal"
-    text="Open for work • Get in touch! • Available now • "
+    text="Open for work • Available now • Contact • "
   />
-  <div class="content">
-    <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
-      Maarten Mieras
-    </h1>
+  <div class="wrapper">
+    <div class="content">
+      <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
+        Maarten Mieras
+      </h1>
 
-    <h2 data-scroll>
-      <span data-scroll data-scroll-speed="1" data-scroll-position="top"
-        >digital designer</span
-      >
-      <span
-        data-scroll
-        data-scroll-speed="2"
-        data-scroll-position="top"
-        class="smaller">based in rotterdam</span
-      >
-    </h2>
+      <h2 data-scroll>
+        <span data-scroll data-scroll-speed="1" data-scroll-position="top"
+          >digital designer</span
+        >
+        <span
+          data-scroll
+          data-scroll-speed="2"
+          data-scroll-position="top"
+          class="smaller">based in rotterdam</span
+        >
+      </h2>
+    </div>
   </div>
 
   <Image
@@ -33,20 +35,23 @@ import CircleText from "../components/CircleText.astro";
     widths={[240, 540, 720, Portrait.width]}
     sizes={`(max-width: 360px) 780px, (max-width: 720px) 1280px, (max-width: 1600px) 1920px, ${Portrait.width}px`}
     alt="A description of my image."
-    class="portrait w-full"
+    class="w-full portrait"
   />
 </section>
 
 <style lang="scss">
+  * {
+    border: 1px rgba(255, 0, 255, 0.9) solid;
+  }
+
   section {
     position: relative;
 
     background: transparent;
-    border-radius: 2% 2% 0 0;
-    overflow: hidden;
+    border-radius: 4vw 4vw 0 0;
   }
 
-  .content {
+  .wrapper {
     display: flex;
     position: relative;
     justify-content: center;
@@ -54,7 +59,11 @@ import CircleText from "../components/CircleText.astro";
     isolation: isolate;
     color: var(--font-color);
     z-index: 5;
-    padding: 5rem 2rem;
+    padding: 3rem 1rem 8rem 1rem;
+  }
+
+  .content {
+    margin-top: clamp(-8rem, -3.2rem - 24vw, -32rem);
   }
 
   h1,
@@ -83,6 +92,7 @@ import CircleText from "../components/CircleText.astro";
     object-fit: cover;
     z-index: 1;
     mix-blend-mode: var(--blend-hero);
+    border-radius: 4vw 4vw 0 0;
   }
 
   :global(.darkmode .content) {
@@ -90,8 +100,8 @@ import CircleText from "../components/CircleText.astro";
   }
 
   @media screen and (min-width: 600px) {
-    .content {
-      min-height: 150vh;
+    .wrapper {
+      min-height: 120vh;
     }
   }
 </style>

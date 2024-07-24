@@ -46,8 +46,10 @@ import MarqueeCarousel from "../components/MarqueeCarousel.astro";
   import Lenis from "lenis";
   document.addEventListener("DOMContentLoaded", () => {
     const lenis = new Lenis({
-      lerp: 0.1, // Lower values create a smoother scroll effect
+      lerp: 0.125, // Lower values create a smoother scroll effect
       smoothWheel: true, // Enables smooth scrolling for mouse wheel events
+      syncTouch: true,
+      syncTouchLerp: 0.075,
     });
 
     function raf(time) {

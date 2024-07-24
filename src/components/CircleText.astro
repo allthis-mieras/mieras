@@ -54,31 +54,35 @@ const {
   }
 
   :global(#container) {
-    position: absolute;
+    position: sticky;
     /* position: fixed; */
-    right: 0rem;
+    /* right: 0rem; */
     top: 0rem;
-    z-index: 10;
+    /* z-index: 10; */
 
     width: clamp(8rem, 3.2rem + 24vw, 32rem);
-    height: 100%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: right;
+    overflow: hidden;
+    padding: 0;
   }
 
   #circle {
-    position: sticky;
-    top: 2rem;
-    width: 100%;
+    /* position: absolute; */
+
+    width: clamp(8rem, 3.2rem + 24vw, 32rem);
     aspect-ratio: 1;
 
     overflow: hidden;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    transform: scale(1.5);
   }
 
   #circle text {
     font-family: var(--font-family-special);
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--last-color);
     letter-spacing: 0.135em;
     opacity: 0.8;
@@ -87,8 +91,7 @@ const {
   }
 
   #circle svg {
-    position: relative;
-
+    /* position: relative; */
     animation: rotate var(--rotate-speed) infinite linear;
     animation-direction: var(--rotate-direction);
     aspect-ratio: 1;
