@@ -7,6 +7,7 @@ const workCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     client: z.string(),
+    type: z.string().optional(),
     year: z.number(),
     role: z.array(z.string()),
     video: z.string().optional(),

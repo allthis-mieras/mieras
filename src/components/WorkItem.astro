@@ -5,11 +5,12 @@ interface WorkItemProps {
   year: number;
   role: string[];
   video: string;
+  type: string;
   // size: "S" | "M" | "L";
 }
 
 const props = Astro.props as WorkItemProps;
-const { title, client, year, role, video, size } = props;
+const { title, client, year, type, role, video, size } = props;
 
 const sizeClasses = {
   // S: "col-span-1",
@@ -20,12 +21,15 @@ const sizeClasses = {
 
 <!-- <div class={`work-item ${sizeClasses[size]}`}> -->
 <div class="work-item">
-  <video class="hidden work-item-bg-video" autoplay loop muted>
+  <!-- <video class="hidden work-item-bg-video" autoplay loop muted>
     <source src={video} type="video/mp4" />
-  </video>
-  <div class="grid grid-cols-5 gap-4 work-item-content">
-    <h3>{client}</h3>
-    <p>{year}</p>
+  </video> -->
+  <div class="flex flex-row gap-4 align-baseline work-item-content">
+    <p class="year">{year}</p>
+    <h2 class="title">{title}</h2>
+    <h3 class="client">{client}</h3>
+
+    <p>{type}</p>
     <div class="role-pills">
       {role.map((r) => <span class="pill">{r}</span>)}
     </div>
@@ -34,8 +38,16 @@ const sizeClasses = {
   <style>
     .work-item {
       position: relative;
-
       transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .year {
+      max-width: 4ch;
+    }
+    .title,
+    .client {
+      flex: 1;
+      font-family: var(--font-family-default);
+      font-size: var(--text-l);
     }
 
     .work-item-content {
@@ -47,10 +59,11 @@ const sizeClasses = {
     }
 
     .pill {
-      background: #0070f3;
-      padding: 0.5rem 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      font-family: "Courier New", Courier, monospace;
+      padding: var(--space-2xs);
+      line-height: 1;
       border-radius: 999px;
-      font-family: var(--font-mono);
     }
   </style>
 </div>

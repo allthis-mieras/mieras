@@ -6,19 +6,22 @@ const workItems = await getCollection("work");
 workItems.sort((a, b) => b.data.year - a.data.year);
 ---
 
-<section class="container work-overview-grid">
-  {workItems.map((item) => <WorkItem {...item.data} />)}
+<section class="container">
+  <div class="py-12 wrapper md:py-24"></div>
+  <h2 class="section-title">Experience</h2>
+  <div class="gap-4 work-overview-grid">
+    {workItems.map((item) => <WorkItem {...item.data} />)}
+  </div>
 </section>
 
 <style>
+  .section-title {
+    font-size: var(--step-5);
+    line-height: 100%;
+  }
   .work-overview-grid {
     display: grid;
-  }
 
-  .work-item {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    gap: var(--gap-default);
   }
 </style>
