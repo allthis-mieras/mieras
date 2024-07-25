@@ -6,7 +6,7 @@ interface WorkItemProps {
   role: string[];
   video: string;
   type: string;
-  // size: "S" | "M" | "L";
+  size: "S" | "M" | "L";
 }
 
 const props = Astro.props as WorkItemProps;
@@ -19,51 +19,46 @@ const sizeClasses = {
 };
 ---
 
-<!-- <div class={`work-item ${sizeClasses[size]}`}> -->
-<div class="work-item">
-  <!-- <video class="hidden work-item-bg-video" autoplay loop muted>
+<!-- <div class={`work-item ${sizeClasses[size]}`}> --><!-- <video class="hidden work-item-bg-video" autoplay loop muted>
     <source src={video} type="video/mp4" />
   </video> -->
-  <div class="flex flex-row flex-wrap gap-4 align-baseline work-item-content">
-    <p class="year">{year}</p>
-    <h2 class="title">{title}</h2>
-    <h3 class="client">{client}</h3>
-
-    <p>{type}</p>
-    <div class="role-pills">
-      {role.map((r) => <span class="pill">{r}</span>)}
-    </div>
+<div class="flex flex-wrap items-baseline space-x-4">
+  <p class="year">{year}</p>
+  <h3 class="flex-1 title">{title}</h3>
+  <h4 class="flex-1 client">{client}</h4>
+  <h5 class="flex-1 type">{type}</h5>
+  <div class="flex flex-wrap gap-2 role-pills">
+    {role.map((r) => <span class="pill">{r}</span>)}
   </div>
-
-  <style>
-    .work-item {
-      position: relative;
-      transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-    }
-    .year {
-      max-width: 4ch;
-    }
-    .title,
-    .client {
-      flex: 1;
-      font-family: var(--font-family-default);
-      font-size: var(--text-l);
-    }
-
-    .work-item-content {
-    }
-
-    .role-pills {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .pill {
-      background: rgba(0, 0, 0, 0.2);
-      font-family: "Courier New", Courier, monospace;
-      padding: var(--space-2xs);
-      line-height: 1;
-      border-radius: 999px;
-    }
-  </style>
 </div>
+
+<style>
+  .year {
+    flex-shrink: 0;
+    font-size: 0.875rem;
+  }
+  .title {
+    font-family: var(--font-family-default);
+    font-size: var(--step--1);
+    flex-grow: 1;
+  }
+  .client,
+  .type {
+    font-family: var(--font-family-default);
+    font-size: var(--step--1);
+    flex: 1;
+  }
+  .role-pills {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    flex: 1;
+  }
+  .pill {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.25rem 0.5rem;
+    font-size: var(--step--2);
+    line-height: 1;
+    border-radius: 999px;
+  }
+</style>

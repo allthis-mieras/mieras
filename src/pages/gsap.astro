@@ -1,7 +1,6 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import SmoothScrollWrapper from "../components/SmoothScrollWrapper.astro";
-import MarqueeGsap from "../components/MarqueeGsap.astro";
+import SmoothScrollWrapper from "../components/.SmoothScrollWrapper.astro";
 
 import Hero from "../components/Hero.astro";
 import Intro from "../components/Intro.astro";
@@ -14,7 +13,7 @@ import Photography from "../components/Photography.astro";
 
 <DefaultLayout title="Home">
   <SmoothScrollWrapper speed={2}>
-    <section class="intro container">
+    <section class="container intro">
       <h1>Marquee effect with GSAP and Swiper</h1>
       <p class="text-8xl">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
@@ -62,35 +61,6 @@ import Photography from "../components/Photography.astro";
         doloribus quasi.
       </p>
     </section>
-
-    <!-- 
-    <MarqueeGsap
-      direction="left"
-      speed={2}
-      gap="10px"
-      itemWidth="40vw"
-      itemHeight="150px"
-    >
-      <div class="marquee-item">Item 1</div>
-      <div class="marquee-item">Item 2</div>
-      <div class="marquee-item">Item 3</div>
-      <div class="marquee-item">Item 4</div>
-      <div class="marquee-item">Item 5</div>
-    </MarqueeGsap>
-
-    <MarqueeGsap
-      direction="right"
-      speed={3}
-      gap="15px"
-      itemWidth="30vw"
-      itemHeight="200px"
-    >
-      <div class="marquee-item">Item A</div>
-      <div class="marquee-item">Item B</div>
-      <div class="marquee-item">Item C</div>
-      <div class="marquee-item">Item D</div>
-      <div class="marquee-item">Item E</div>
-    </MarqueeGsap> -->
 
     <footer>
       <div>

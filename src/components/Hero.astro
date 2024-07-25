@@ -12,7 +12,7 @@ import CircleText from "../components/CircleText.astro";
       text="Open for work • Available now • Contact • "
     />
     <div class="wrapper">
-      <div class="p-12 p-16 px-8 py-12 content md:pb-64">
+      <div class="p-16 px-8 py-12 content md:pb-64">
         <h1>Maarten Mieras</h1>
         <h2>
           <span>digital designer</span>
@@ -32,10 +32,6 @@ import CircleText from "../components/CircleText.astro";
 </section>
 
 <style lang="scss">
-  * {
-    // border: 1px rgba(255, 0, 255, 0.9) solid;
-  }
-
   :root {
     --radius: 2vw;
   }
@@ -57,10 +53,6 @@ import CircleText from "../components/CircleText.astro";
     isolation: isolate;
     color: var(--background);
     z-index: 5;
-  }
-
-  .content {
-    // margin-top: clamp(-8rem, -3.2rem - 24vw, -32rem);
   }
 
   h1,
@@ -100,8 +92,5 @@ import CircleText from "../components/CircleText.astro";
   }
 
   @media screen and (min-width: 600px) {
-    .wrapper {
-      // min-height: 100vh;
-    }
   }
 </style>

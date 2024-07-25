@@ -7,9 +7,6 @@
   --font-familiy-fallback: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
   --font-family-default: 'Inter', sans-serif;
   --font-family-special: 'Cosplay', var(--font-familiy-fallback);
-  /* --font-color: var(--neutral-900); */
-  /* --action-color: var(--neutral-900); */
-  /* --background: var(--neutral-100); */
   --font-color: var(--last-color-dark);
   --action-color: var(--first-color-dark);
   --action-color-state: var(--last-color-dark);
@@ -25,9 +22,6 @@
 }
 
 .darkmode {
-  /* --font-color: var(--neutral-100); */
-  /* --action-color: var(--neutral-100); */
-  /* --background: var(--dark-100); */
   --font-color: var(--first-color);
   --action-color: var(--last-color);
   --action-color-state: var(--last-color);

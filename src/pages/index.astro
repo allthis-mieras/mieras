@@ -6,14 +6,12 @@ import Intro from "../components/Intro.astro";
 
 import Marquee from "../components/Marquee.astro";
 import MarqueeItem from "../components/MarqueeItem.astro";
-import Work from "../components/Work.astro";
-import Photography from "../components/Photography.astro";
 import WorkOverview from "../components/WorkOverview.astro";
 import MarqueeCarousel from "../components/MarqueeCarousel.astro";
-import CallToAction from "../components/CallToAction.astro";
+import Photography from "../components/Photography.astro";
 ---
 
-<DefaultLayout title="Home">
+<DefaultLayout title="Maarten Mieras">
   <Hero />
 
   <Marquee direction="left" speed={50}>
@@ -32,19 +30,10 @@ import CallToAction from "../components/CallToAction.astro";
   </Marquee>
   <Intro />
   <WorkOverview />
-  <MarqueeCarousel />
-  <CallToAction />
+  <Photography />
 </DefaultLayout>
 
 <script>
-  // LOCOMOTIVE
-  // import LocomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll";
-
-  // const scroller = new LocomotiveScroll({
-  //   el: document.querySelector("[data-scroll-container]"),
-  //   smooth: true,
-  // });
-
   // LENIS
   import Lenis from "lenis";
   document.addEventListener("DOMContentLoaded", () => {

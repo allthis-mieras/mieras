@@ -1,21 +1,27 @@
 ---
+import MarqueeCarousel from "./MarqueeCarousel.astro";
 ---
 
-<section class="">
-  <div class="grid gap-4" data-scroll-section>
-    <h2>Photography</h2>
-    <p>
-      Yes I like taking pictures with my Canon A1 or Yashica-D Mat or Rolleiflex
-      3.5
-    </p>
+<section class="container stretch">
+  <div class="container">
+    <div class="py-8 md:py-24">
+      <h2 class="section-title">Photography</h2>
+      <MarqueeCarousel />
+      <p>
+        Yes I like taking pictures with my Canon A1 or Yashica-D Mat or
+        Rolleiflex 3.5
+      </p>
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   section {
-    background: var(--background-overlay);
-    padding: var(--space-l);
-    aspect-ratio: 3 / 4;
-    border-radius: var(--space-l);
+    background: var(--font-color);
+  }
+  .section-title {
+    font-size: var(--step-5);
+    line-height: 100%;
+    color: var(--background);
   }
 </style>
