@@ -12,13 +12,12 @@ const { label } = Astro.props;
 <style>
   span {
     font-family: var(--font-family-special);
-    font-size: var(--step-4);
-    padding: calc(var(--space-3xl) * 0.85) var(--space-3xl) var(--space-3xl)
-      var(--space-3xl);
+    font-size: var(--step-3);
+    padding: var(--space-l) var(--space-2xl);
+    padding-top: calc(var(--space-l) + 0.2em);
     color: var(--background);
     background-color: var(--font-color);
-    text-edge: cap alphabetic;
-    leading-trim: both;
+    line-height: 100%;
   }
 
   /* span::after {

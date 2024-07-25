@@ -4,8 +4,9 @@
   --radius-default: var(--radius-large);
   --gap-default: 1rem;
   --font-measure: 70ch;
+  --font-familiy-fallback: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
   --font-family-default: 'Inter', sans-serif;
-  --font-family-special: 'manofa-condensed', sans-serif;
+  --font-family-special: 'Cosplay', var(--font-familiy-fallback);
   /* --font-color: var(--neutral-900); */
   /* --action-color: var(--neutral-900); */
   /* --background: var(--neutral-100); */
@@ -16,7 +17,7 @@
   --background-overlay: rgba(255,255,255,0.3);
   --primary-background: var(--primary-100);
   --neutral-background: var(--neutral-200);
-  --blend-hero: overlay;
+  --blend-hero: multiply;
   --blend-work: multiply:
     
     
