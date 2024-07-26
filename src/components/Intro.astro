@@ -2,7 +2,7 @@
 ---
 
 <section class="container">
-  <div class="grid gap-4 md:gap-6 lg:grid-cols-3">
+  <div class="grid gap-4 md:gap-6 lg:grid-cols-2">
     <p class="lead">
       As a seasoned designer with roots in the agency world and over two decades
       of freelancing experience, I’ve witnessed firsthand the digital
@@ -10,25 +10,28 @@
       equipped me with the expertise to navigate and adapt to the ever-evolving
       design challenges.
     </p>
-    <p class="">
-      Specializing in solving complex issues practically, my work ensures that
-      end users achieve their goals while aligning seamlessly with company
-      objectives. As a UX and visual designer, I merge these crucial elements to
-      create cohesive, effective designs. Thriving on asking insightful
-      questions, my approach addresses intricate concepts and delivers
-      efficient, accurate results without losing the fun.
-    </p>
-    <p>
-      As the co-owner of All This, a digital design studio, I bring a unique
-      perspective to every project. For those seeking top-tier design solutions,
-      visit allthis.digital.
-    </p>
+    <div class="text">
+      <p>
+        Specializing in solving complex issues practically, my work ensures that
+        end users achieve their goals while aligning seamlessly with company
+        objectives. As a UX and visual designer, I merge these crucial elements
+        to create cohesive, effective designs. Thriving on asking insightful
+        questions, my approach addresses intricate concepts and delivers
+        efficient, accurate results without losing the fun.
+      </p>
+      <p>
+        As the co-owner of All This, a digital design studio, I bring a unique
+        perspective to every project. For those seeking top-tier design
+        solutions, visit allthis.digital.
+      </p>
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   .lead {
     font-family: var(--font-family-default);
+    font-size: var(--step-0);
     font-weight: 700;
     letter-spacing: 0.00125em;
   }
@@ -36,10 +39,11 @@
   p {
     font-family: var(--font-family-default);
     font-size: var(--step--1);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 133%;
     letter-spacing: 0.0125em;
-    margin-inline: 0.5rem;
+    margin-bottom: 1rem;
+    text-wrap: balance;
   }
   @media screen and (max-width: 1024px) {
     p {

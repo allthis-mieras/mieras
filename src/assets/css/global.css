@@ -5,33 +5,52 @@
   --gap-default: 1rem;
   --font-measure: 70ch;
   --font-familiy-fallback: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
-  --font-family-default: 'Inter', sans-serif;
+  --font-family-default: 'adelle-sans', 'Inter', sans-serif;
   --font-family-special: 'Cosplay', var(--font-familiy-fallback);
+  --font-family-mono: 'adelle-mono-flex', monospace;
   --font-color: var(--last-color-dark);
+  /* Themes */
   --action-color: var(--first-color-dark);
   --action-color-state: var(--last-color-dark);
   --background: var(--first-color);
-  --background-overlay: rgba(255,255,255,0.3);
-  --primary-background: var(--primary-100);
-  --neutral-background: var(--neutral-200);
   --circle-ticker: var(--first-color);
   --blend-hero: multiply;
   --blend-work: multiply:
+
+  --font-color-default:  rgba(1,1,1);
+  --background-default: rgba(250,250,250);
+  --font-color-flipped:rgba(250,250,250);
+  --background-flipped:  rgba(1,1,1);
+    --background-overlay: rgba(255,255,255,0.3);
+  --primary-background: var(--primary-100);
+  --neutral-background: var(--neutral-200);
+
     
     
 }
 
 .darkmode {
   --font-color: var(--first-color);
+  --font-color-neutral: var(--primary-100);
   --action-color: var(--last-color);
   --action-color-state: var(--last-color);
   --background: var(--last-color-dark);
   --background-overlay: rgba(0,0,0,0.2);
   --primary-background: var(--primary-500);
   --neutral-background: var(--neutral-900);
+  --background-neutral-light: rgba(0,0,0,0.4);
+  --background-dark: var(--neutral-100);
   --circle-ticker: var(--last-color);
   --blend-hero: overlay;
   --blend-work: overlay:
+
+  --font-color-default: rgba(250,250,250);
+  --background-default:  rgba(1,1,1);
+  --font-color-flipped: rgba(1,1,1);
+  --background-flipped: rgba(250,250,250);
+    --background-overlay: rgba(0,0,0,0.3);
+  --primary-background: var(--primary-900);
+  --neutral-background: var(--neutral-00);
 
 }
 

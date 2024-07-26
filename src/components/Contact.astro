@@ -1,13 +1,15 @@
 <section class="container">
   <div
-    class="flex flex-col items-center gap-12 p-12 mt-24 mb-32 contact md:p-24"
+    class="flex flex-col items-center gap-4 p-12 mt-24 mb-32 contact md:p-24"
   >
-    <h2 class="text-center-5xl">Get in toch</h2>
-    <p>You’ve reached the end. Geat job!</p>
-    <p>Got a job or a question? Click a button below.</p>
+    <div class="text-center text">
+      <h2 class="5xl">get in touch</h2>
+      <p class="lead">You’ve reached the end. Geat job!</p>
+      <p>Got a job or a question? Click a button below.</p>
+    </div>
     <div class="flex gap-4 buttons">
-      <a href="#" class="text-lg text-center"> e-mail</a>
-      <a href="#" class="text-lg text-center"> call</a>
+      <a href="#" class="text-lg text-center button"> e-mail</a>
+      <a href="#" class="text-lg text-center button"> call</a>
     </div>
   </div>
 </section>
@@ -38,7 +40,33 @@
     &:where(:hover, :focus) {
       color: var(--neutral-100);
       background-color: var(--neutral-900);
-      text-decoration: underline;
+      // text-decoration: underline;
     }
+  }
+
+  h2 {
+    font-size: var(--step-4);
+  }
+
+  p.lead {
+    font-size: var(--step-1);
+    font-weight: 700;
+  }
+  p {
+    font-size: var(--step-0);
+    margin-block: 0.5em;
+    line-height: 1;
+  }
+  .button {
+    padding: var(--space-s) var(--space-xl);
+    font-family: var(--font-family-special);
+    font-size: var(--step-2);
+    line-height: 100%;
+    border-radius: 100vw;
+    background: var(--action-color);
+    color: var(--background);
+    min-width: 10ch;
+
+    border: none;
   }
 </style>
