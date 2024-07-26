@@ -22,17 +22,27 @@ const sizeClasses = {
 <!-- <div class={`work-item ${sizeClasses[size]}`}> --><!-- <video class="hidden work-item-bg-video" autoplay loop muted>
     <source src={video} type="video/mp4" />
   </video> -->
-<div class="flex flex-wrap items-baseline space-x-4">
-  <p class="year">{year}</p>
-  <h3 class="flex-1 title">{title}</h3>
-  <h4 class="flex-1 client">{client}</h4>
-  <h5 class="flex-1 type">{type}</h5>
-  <div class="flex flex-wrap gap-2 role-pills">
-    {role.map((r) => <span class="pill">{r}</span>)}
+<div class="grid items-center gap-2 py-4 work-row md:grid-cols-12 md:gap-2">
+  <div class="flex flex-row items-baseline gap-4 md:col-span-3">
+    <p class="year">{year}</p>
+    <h3 class="client">{client}</h3>
   </div>
+  <h4 class="title md:col-span-7">{title}</h4>
+  <!-- <h5 class="flex-1 type">{type}</h5> -->
+  <ul class="col-span-2 role-pills">
+    {role.map((r) => <li class="pill">{r}</li>)}
+  </ul>
 </div>
 
 <style>
+  /* * {
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  } */
+
+  .work-row {
+    border-top: 2px solid rgba(0, 0, 0, 0.05);
+  }
+
   .year {
     flex-shrink: 0;
     font-size: 0.875rem;
@@ -41,12 +51,19 @@ const sizeClasses = {
     font-family: var(--font-family-default);
     font-size: var(--step--1);
     flex-grow: 1;
+    line-height: 112.5%;
   }
-  .client,
+  .client {
+    font-family: var(--font-family-special);
+    font-size: var(--step-0);
+    line-height: 1;
+    padding-top: calc(0.125rem + 0.4vw);
+  }
   .type {
     font-family: var(--font-family-default);
     font-size: var(--step--1);
     flex: 1;
+    text-wrap: nowrap;
   }
   .role-pills {
     display: flex;
@@ -55,10 +72,12 @@ const sizeClasses = {
     flex: 1;
   }
   .pill {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0.25rem 0.5rem;
+    background: var(--background);
+    padding: 0.475rem 0.675rem;
     font-size: var(--step--2);
+    font-weight: 500;
     line-height: 1;
     border-radius: 999px;
+    text-wrap: nowrap;
   }
 </style>

@@ -2,7 +2,7 @@
 ---
 
 <section class="container">
-  <div class="grid gap-0 md:gap-8 lg:grid-cols-3">
+  <div class="grid gap-4 md:gap-6 lg:grid-cols-3">
     <p class="lead">
       As a seasoned designer with roots in the agency world and over two decades
       of freelancing experience, I’ve witnessed firsthand the digital
@@ -31,7 +31,6 @@
     font-family: var(--font-family-default);
     font-weight: 700;
     letter-spacing: 0.00125em;
-    text-wrap: balance;
   }
 
   p {
@@ -41,5 +40,10 @@
     line-height: 133%;
     letter-spacing: 0.0125em;
     margin-inline: 0.5rem;
+  }
+  @media screen and (max-width: 1024px) {
+    p {
+      font-size: var(--step-0);
+    }
   }
 </style>

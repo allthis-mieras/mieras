@@ -5,14 +5,14 @@ import CircleText from "../components/CircleText.astro";
 ---
 
 <section class="container relative px-32 stretch">
-  <div class="relative flex flex-col items-center pt-0">
+  <div class="relative flex flex-col items-center">
     <CircleText
       rotateSpeed="40s"
       rotateDirection="normal"
       text="Open for work • Available now • Contact • "
     />
     <div class="wrapper">
-      <div class="p-16 px-8 py-12 content md:pb-64">
+      <div class="p-16 px-8 py-12 content">
         <h1>Maarten Mieras</h1>
         <h2>
           <span>digital designer</span>
@@ -53,6 +53,8 @@ import CircleText from "../components/CircleText.astro";
     isolation: isolate;
     color: var(--background);
     z-index: 5;
+    margin-top: -2vw;
+    padding-bottom: calc(2rem + 4vw);
   }
 
   h1,
@@ -67,7 +69,7 @@ import CircleText from "../components/CircleText.astro";
     font-size: var(--step-1);
     font-weight: 400;
     letter-spacing: 0.025em;
-    margin-bottom: var(--space-l);
+    margin-bottom: calc(0.5rem + 2vw);
   }
 
   h2 {
@@ -91,6 +93,9 @@ import CircleText from "../components/CircleText.astro";
     color: var(--first-color);
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (max-width: 600px) {
+    h2 {
+      font-size: var(--step-4);
+    }
   }
 </style>

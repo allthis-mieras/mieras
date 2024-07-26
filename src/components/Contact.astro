@@ -1,0 +1,44 @@
+<section class="container">
+  <div
+    class="flex flex-col items-center gap-12 p-12 mt-24 mb-32 contact md:p-24"
+  >
+    <h2 class="text-center-5xl">Get in toch</h2>
+    <p>You’ve reached the end. Geat job!</p>
+    <p>Got a job or a question? Click a button below.</p>
+    <div class="flex gap-4 buttons">
+      <a href="#" class="text-lg text-center"> e-mail</a>
+      <a href="#" class="text-lg text-center"> call</a>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+  }
+
+  .call-to-action {
+    color: var(--neutral-900);
+    background-image: linear-gradient(
+      40deg,
+      var(--primary-100),
+      var(--secondary-200)
+    );
+  }
+
+  .call-to-action a:not(button),
+  .call-to-action a:not(button):visited {
+    padding: 1rem;
+    color: var(--neutral-900);
+    font-weight: bold;
+    border: 3px solid var(--neutral-900);
+    border-radius: 3px;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+    &:where(:hover, :focus) {
+      color: var(--neutral-100);
+      background-color: var(--neutral-900);
+      text-decoration: underline;
+    }
+  }
+</style>
