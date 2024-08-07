@@ -2,13 +2,15 @@
 ---
 
 <section class="container">
-  <div class="grid items-baseline gap-4 md:gap-8 lg:grid-cols-2">
+  <div
+    class="grid items-baseline gap-4 py-8 md:gap-8 md:py-12 lg:grid-cols-2 lg:gap-12 lg:py-16"
+  >
     <p class="lead">
       As a seasoned designer with roots in the agency world and over two decades
-      of freelancing experience, I’ve witnessed firsthand the digital
-      landscape's and industry's transformation. This extensive journey has
-      equipped me with the expertise to navigate and adapt to the ever-evolving
-      design challenges.
+      of freelancing experience, I’ve witnessed firsthand the transformation of
+      the digital landscape and industry. This extensive journey has equipped me
+      with the expertise to navigate and adapt to ever-evolving design
+      challenges.
     </p>
     <div class="text">
       <p>
@@ -17,12 +19,9 @@
         objectives. As a UX and visual designer, I merge these crucial elements
         to create cohesive, effective designs. Thriving on asking insightful
         questions, my approach addresses intricate concepts and delivers
-        efficient, accurate results without losing the fun.
-      </p>
-      <p>
-        As the co-owner of All This, a digital design studio, I bring a unique
-        perspective to every project. For those seeking top-tier design
-        solutions, visit allthis.digital.
+        efficient, accurate results without losing the fun. As the co-owner of
+        All This, a digital design studio, I bring a unique perspective to every
+        project. For top-tier design solutions, visit allthis.digital.
       </p>
     </div>
   </div>
@@ -31,18 +30,18 @@
 <style lang="scss">
   .lead {
     font-family: var(--font-family-default);
-    font-size: var(--step-1);
-    font-weight: 500;
-    letter-spacing: 0.00125em;
-    line-height: calc(var(--step-1) * 1.33);
+    font-size: var(--step-0);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: calc(var(--step-0) * 1.2);
   }
 
   p {
     font-family: var(--font-family-default);
-    font-size: calc(var(--step-1) * 0.675);
-    font-weight: 400;
-    line-height: calc(var(--step-1) * 0.675 * 1.55);
-    letter-spacing: 0.0125em;
+    font-size: calc(var(--step-0) * 0.675);
+    font-weight: 600;
+    line-height: calc(var(--step-0) * 0.675 * 1.2);
+    letter-spacing: -0.0125em;
     margin: 0;
     text-wrap: balance;
   }
@@ -52,7 +51,7 @@
   }
   @media screen and (max-width: 1024px) {
     p {
-      font-size: var(--step-0);
+      // font-size: var(--step-0);
     }
   }
 </style>

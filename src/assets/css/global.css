@@ -5,7 +5,7 @@
   --gap-default: 1rem;
   --font-measure: 70ch;
   --font-familiy-fallback: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
-  --font-family-default: 'adelle-sans', 'Inter', sans-serif;
+  --font-family-default: 'neue-haas-grotesk-display', 'Inter', sans-serif;
   --font-family-special: 'Cosplay', var(--font-familiy-fallback);
   --font-family-mono: 'adelle-mono-flex', monospace;
   --font-color: var(--last-color-dark);

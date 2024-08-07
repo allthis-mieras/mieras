@@ -7,11 +7,12 @@ workItems.sort((a, b) => b.data.year - a.data.year);
 ---
 
 <section class="container">
-  <div class="py-32 md:py-24">
+  <div class="py-16 md:py-24 lg:py-32">
     <h2 class="section-title">Experience</h2>
     <div class="work-overview-grid">
       {workItems.map((item) => <WorkItem {...item.data} />)}
     </div>
+    <a href="https://allthis.digital" class="btn">View case studies</a>
   </div>
 </section>
 

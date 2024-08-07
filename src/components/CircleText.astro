@@ -58,7 +58,7 @@ const {
     /* position: fixed; */
     /* right: 0rem; */
     top: 0rem;
-    z-index: 10;
+    z-index: 2;
 
     width: 100%;
     height: auto;
@@ -98,7 +98,7 @@ const {
     width: 100%;
     height: 100%;
   }
-
+  /* 
   @keyframes rotate {
     from {
       transform: rotate(360deg);
@@ -106,26 +106,19 @@ const {
     to {
       transform: rotate(0);
     }
-  }
+  } */
 </style>
 
 <script>
-  // Update CSS variables based on props
-  const setRotateSpeed = () => {
-    if (document.documentElement) {
-      document.documentElement.style.setProperty("--rotate-speed", rotateSpeed);
-    }
-  };
+  // Function to update the rotation of the SVG
+  const circle = document.getElementById("circle");
+  const svg = circle?.querySelector("svg");
 
-  const setRotateDirection = () => {
-    if (document.documentElement) {
-      document.documentElement.style.setProperty(
-        "--rotate-direction",
-        rotateDirection
-      );
+  document.addEventListener("scroll", () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const rotation = scrollTop * -0.3; // Adjust the multiplier to control the speed
+    if (svg) {
+      svg.style.transform = `rotate(${rotation}deg)`;
     }
-  };
-
-  setRotateSpeed();
-  setRotateDirection();
+  });
 </script>

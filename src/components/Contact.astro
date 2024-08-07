@@ -3,13 +3,18 @@
     class="contact mb-32 mt-24 flex flex-col items-center gap-12 p-12 md:p-24"
   >
     <div class="text text-center">
-      <h2 class="5xl">get in touch</h2>
+      <h2 class="title">Get in touch</h2>
       <p class="lead">You’ve reached the end. Geat job!</p>
       <p>Got a job or a question? Click a button below.</p>
     </div>
     <div class="buttons flex gap-4">
-      <a href="#" class="button text-center text-lg"> e-mail</a>
-      <a href="#" class="button text-center text-lg"> call</a>
+      <a
+        href="mailto:maarten@allthis.digital"
+        class="button text-center text-lg"
+      >
+        e-mail</a
+      >
+      <a href="tel://+3164210394" class="button text-center text-lg"> call</a>
     </div>
   </div>
 </section>
@@ -45,8 +50,9 @@
   }
 
   h2 {
-    font-size: var(--step-4);
-    margin-block: 2rem;
+    font-size: var(--step-5);
+
+    line-height: 100%;
   }
 
   p.lead {
@@ -69,12 +75,32 @@
     color: var(--font-color);
     min-width: 10ch;
     background: none;
+    transition: all 0.2s cubic-bezier(0, 0.55, 0.45, 1);
   }
 
   .button:hover {
-    background: var(--action-color);
     color: var(--font-color);
-    color: var(--action-color);
     text-decoration: none;
+    transform: rotate(-2deg) scale(1.1);
+  }
+
+  .container:has(.button:hover) .button:hover {
+    transform: scale(1.6) rotate(-2deg);
+    // border: 0.1em solid var(--background);
+    background: var(--background);
+    opacity: 1;
+    z-index: 4;
+    box-shadow: 0px 2.4px 2.2px rgba(0, 0, 0, 0.02),
+      0px 5.7px 5.3px rgba(0, 0, 0, 0.028), 0px 10.8px 10px rgba(0, 0, 0, 0.035),
+      0px 19.2px 17.9px rgba(0, 0, 0, 0.042),
+      0px 35.9px 33.4px rgba(0, 0, 0, 0.05), 0px 86px 80px rgba(0, 0, 0, 0.07);
+  }
+
+  .button:nth-child(2):hover {
+    transform: scale(1.6) rotate(2deg) !important;
+  }
+  .container:has(.button:hover) .button {
+    transform: scale(0.8);
+    opacity: 0.4;
   }
 </style>
