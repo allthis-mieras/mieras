@@ -7,7 +7,7 @@ workItems.sort((a, b) => b.data.year - a.data.year);
 ---
 
 <section class="container">
-  <div class="py-8 md:py-24">
+  <div class="py-32 md:py-24">
     <h2 class="section-title">Experience</h2>
     <div class="work-overview-grid">
       {workItems.map((item) => <WorkItem {...item.data} />)}

@@ -49,12 +49,13 @@ const fitContentAbsoluteClass = fitContentAbsolute
 
 <style>
   .marquee {
-    --gap: var(--gap-default);
+    --gap: calc(2vw + var(--gap-default));
     position: relative;
     display: flex;
     overflow: hidden;
     user-select: none;
     gap: var(--gap);
+    margin-block: 1rem;
   }
 
   .marquee__content {

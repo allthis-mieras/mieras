@@ -4,7 +4,7 @@ import Portrait from "../assets/img/mieras-portrait.png"; // Image is 1600x900
 import CircleText from "../components/CircleText.astro";
 ---
 
-<section class="container relative px-32 stretch">
+<section class="stretch container relative px-32">
   <div class="relative flex flex-col items-center">
     <CircleText
       rotateSpeed="40s"
@@ -12,7 +12,7 @@ import CircleText from "../components/CircleText.astro";
       text="Open for work • Available now • Contact • "
     />
     <div class="wrapper">
-      <div class="p-16 px-8 py-12 content">
+      <div class="content p-16 px-8 py-12">
         <h1>Maarten Mieras</h1>
         <h2>
           <span>digital designer</span>
@@ -26,7 +26,7 @@ import CircleText from "../components/CircleText.astro";
       widths={[240, 540, 720, Portrait.width]}
       sizes={`(max-width: 360px) 780px, (max-width: 720px) 1280px, (max-width: 1600px) 1920px, ${Portrait.width}px`}
       alt="A description of my image."
-      class="w-full portrait"
+      class="portrait w-full"
     />
   </div>
 </section>
@@ -53,7 +53,7 @@ import CircleText from "../components/CircleText.astro";
     isolation: isolate;
     color: var(--background);
     z-index: 5;
-    margin-top: -2vw;
+    margin-top: -15vw;
     padding-bottom: calc(2rem + 4vw);
   }
 
@@ -75,6 +75,7 @@ import CircleText from "../components/CircleText.astro";
   h2 {
     text-transform: uppercase;
     font-size: var(--step-5);
+    max-width: 12ch;
   }
 
   img {

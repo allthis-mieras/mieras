@@ -1,15 +1,15 @@
 <section class="container">
   <div
-    class="flex flex-col items-center gap-4 p-12 mt-24 mb-32 contact md:p-24"
+    class="contact mb-32 mt-24 flex flex-col items-center gap-12 p-12 md:p-24"
   >
-    <div class="text-center text">
+    <div class="text text-center">
       <h2 class="5xl">get in touch</h2>
       <p class="lead">You’ve reached the end. Geat job!</p>
       <p>Got a job or a question? Click a button below.</p>
     </div>
-    <div class="flex gap-4 buttons">
-      <a href="#" class="text-lg text-center button"> e-mail</a>
-      <a href="#" class="text-lg text-center button"> call</a>
+    <div class="buttons flex gap-4">
+      <a href="#" class="button text-center text-lg"> e-mail</a>
+      <a href="#" class="button text-center text-lg"> call</a>
     </div>
   </div>
 </section>
@@ -46,27 +46,35 @@
 
   h2 {
     font-size: var(--step-4);
+    margin-block: 2rem;
   }
 
   p.lead {
-    font-size: var(--step-1);
+    font-size: var(--step-0);
     font-weight: 700;
   }
   p {
-    font-size: var(--step-0);
+    font-size: var(--step--1);
     margin-block: 0.5em;
     line-height: 1;
   }
   .button {
-    padding: var(--space-s) var(--space-xl);
+    padding: var(--space-s) var(--space-xl) var(--space-xs) var(--space-xl);
     font-family: var(--font-family-special);
     font-size: var(--step-2);
     line-height: 100%;
     border-radius: 100vw;
     background: var(--action-color);
-    color: var(--background);
+    border: 0.1em solid var(--font-color);
+    color: var(--font-color);
     min-width: 10ch;
+    background: none;
+  }
 
-    border: none;
+  .button:hover {
+    background: var(--action-color);
+    color: var(--font-color);
+    color: var(--action-color);
+    text-decoration: none;
   }
 </style>

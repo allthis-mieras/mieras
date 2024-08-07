@@ -2,7 +2,7 @@
 ---
 
 <section class="container">
-  <div class="grid gap-4 md:gap-6 lg:grid-cols-2">
+  <div class="grid items-baseline gap-4 md:gap-8 lg:grid-cols-2">
     <p class="lead">
       As a seasoned designer with roots in the agency world and over two decades
       of freelancing experience, I’ve witnessed firsthand the digital
@@ -31,19 +31,24 @@
 <style lang="scss">
   .lead {
     font-family: var(--font-family-default);
-    font-size: var(--step-0);
-    font-weight: 700;
+    font-size: var(--step-1);
+    font-weight: 500;
     letter-spacing: 0.00125em;
+    line-height: calc(var(--step-1) * 1.33);
   }
 
   p {
     font-family: var(--font-family-default);
-    font-size: var(--step--1);
+    font-size: calc(var(--step-1) * 0.675);
     font-weight: 400;
-    line-height: 133%;
+    line-height: calc(var(--step-1) * 0.675 * 1.55);
     letter-spacing: 0.0125em;
-    margin-bottom: 1rem;
+    margin: 0;
     text-wrap: balance;
+  }
+
+  p + p {
+    margin-block-start: calc(var(--step-1) * 0.675 * 1.55);
   }
   @media screen and (max-width: 1024px) {
     p {

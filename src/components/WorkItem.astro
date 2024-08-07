@@ -22,14 +22,16 @@ const sizeClasses = {
 <!-- <div class={`work-item ${sizeClasses[size]}`}> --><!-- <video class="hidden work-item-bg-video" autoplay loop muted>
     <source src={video} type="video/mp4" />
   </video> -->
-<div class="grid items-center gap-2 py-4 work-row md:grid-cols-12 md:gap-2">
-  <div class="flex flex-row items-baseline gap-4 md:col-span-3">
+<div
+  class="work-row grid grid-flow-row grid-cols-4 items-center gap-2 py-4 md:gap-2 lg:grid-cols-12"
+>
+  <div class="col-span-2 flex flex-row items-baseline gap-4 lg:col-span-3">
     <p class="year">{year}</p>
     <h3 class="client">{client}</h3>
   </div>
-  <h4 class="title md:col-span-7">{title}</h4>
+  <h4 class="title col-span-2 lg:col-span-7">{title}</h4>
   <!-- <h5 class="flex-1 type">{type}</h5> -->
-  <ul class="col-span-2 role-pills">
+  <ul class="role-pills col-span-2 flex">
     {role.map((r) => <li class="pill">{r}</li>)}
   </ul>
 </div>
@@ -52,6 +54,7 @@ const sizeClasses = {
     font-size: var(--step--1);
     flex-grow: 1;
     line-height: 112.5%;
+    font-weight: 500;
   }
   .client {
     font-family: var(--font-family-special);
