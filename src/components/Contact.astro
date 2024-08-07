@@ -1,6 +1,6 @@
 <section class="container">
   <div
-    class="contact mb-32 mt-24 flex flex-col items-center gap-12 p-12 md:p-24"
+    class="contact mb-32 mt-24 flex flex-col items-center gap-12 p-4 md:p-12 md:p-24"
   >
     <div class="text text-center">
       <h2 class="title">Get in touch</h2>
@@ -102,5 +102,11 @@
   .container:has(.button:hover) .button {
     transform: scale(0.8);
     opacity: 0.4;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .button {
+      padding: var(--space-xs) var(--space-l) var(--space-xs) var(--space-l);
+    }
   }
 </style>
